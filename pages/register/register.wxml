@@ -1,0 +1,30 @@
+<!--pages/register/register.wxml-->
+<view class="page-container">
+
+  <!-- 收货人信息填写 -->
+  <view class="page-section consignee-info-fill">
+
+    <Cell label="姓名">
+      <input slot="value" placeholder="请输入"/>
+    </Cell>
+
+    <Cell label="手机号">
+      <input slot="value" class="strong" type="number" value="18210200597"/>
+    </Cell>
+
+    <Cell label="年龄">
+      <input slot="value" class="strong" type="number" value="33"/>
+    </Cell>
+
+    <Cell label="性别" arrow line="{{false}}" >
+      <text slot="value" class="strong">男</text>
+    </Cell>
+
+  </view>
+
+
+  <!-- 页面按钮 -->
+  <c-button text="注册" />
+
+</view>
+

@@ -1,0 +1,29 @@
+<!--components/GoodsItem/GoodsItem.wxml-->
+<view class="c-product-item" wx:if="{{data}}">
+
+  <!-- 商品图片 -->
+  <view class="product-img">
+    <image src="{{data.images}}"></image>
+  </view>
+
+  <!-- 商品详细描述信息 -->
+  <view class="product-info space-between {{line ? 'line' : ''}}">
+    <view class="space-between">
+      <text class="product-desc">{{data.wareName}}</text>
+      <view class="delete-btn">
+        <image slot="top-row"
+               class="delete-icon"
+               src="asserts/bin.png"></image>
+      </view>
+
+    </view>
+
+    <view class="space-between">
+      <text class="product-price">{{data.storePrice}}</text>
+      <BuyCount />
+    </view>
+
+  </view>
+
+  <slot></slot>
+</view>

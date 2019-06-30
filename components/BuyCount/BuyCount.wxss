@@ -1,0 +1,38 @@
+/* components/BuyCount/BuyCount.wxss */
+
+/*主容器*/
+.buy-count {
+  width: 154rpx;
+  height: 38rpx;
+  display: flex;
+  /*给主容器设一个边框*/
+  border: 2rpx solid rgba(0,0,0,0.09);
+  border-radius: 4rpx;
+}
+
+/*加号和减号*/
+.buy-count text {
+  width: 46rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #000000;
+}
+
+/*数值*/
+.buy-count input {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  text-align: center !important;
+  width: 62rpx;
+  height: 38rpx;
+  font-size: 20rpx;
+  color: rgba(13,13,13,0.85);
+  border-left: 2rpx solid #ccc;
+  border-right: 2rpx solid #ccc;
+}
+
+/*禁用样式*/
+.buy-count .disabled{
+  color: #ccc;
+}

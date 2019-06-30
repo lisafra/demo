@@ -1,0 +1,17 @@
+/* pages/order/order.wxss */
+.consignee-info{
+  padding: 30rpx 40rpx;
+}
+
+.order-info{
+  margin-bottom: 50rpx;
+}
+
+.page-title-big{
+  margin-bottom: 6rpx;
+}
+
+.total-price{
+  font-size: 32rpx;
+  padding-bottom: 16rpx;
+}

@@ -1,0 +1,49 @@
+/* components/GoodsItem/GoodsItem.wxss */
+
+.c-product-item{
+  position: relative;
+  display: flex;
+  width: 87.5vw;
+  padding: 30rpx 0 0;
+  font-size: 24rpx;
+}
+
+.product-img{
+  width: 130rpx;
+  height: 130rpx;
+  background: #D8D8D8;
+  margin: 0 26rpx 32rpx 20rpx;
+}
+
+.product-info{
+  flex-direction: column;
+}
+
+.product-price{
+  color: #FF0000;
+  margin-bottom: 30rpx;
+}
+
+.product-info.line {
+  border-bottom: 2rpx solid rgba(0,0,0,0.09);
+}
+
+.delete-btn{
+  display: flex;
+  justify-content: flex-end;
+  width: 72rpx;
+  height: 72rpx;
+  padding-top: 6rpx;
+}
+
+.delete-icon{
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
+}
+
+

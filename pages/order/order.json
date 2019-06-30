@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "代下单",
+  "usingComponents": {
+    "Adress": "/components/Adress/Adress",
+    "c-button": "/components/Button/Button",
+    "Cell": "/components/Cell/Cell",
+    "GoodsItem": "/components/GoodsItem/GoodsItem"
+  }
+}

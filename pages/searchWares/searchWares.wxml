@@ -1,0 +1,27 @@
+<!--pages/searchWares/searchWares.wxml-->
+<view class="page-container">
+
+  <!-- 搜索商品 -->
+  <Search placeholder="请输入SKU编号" inputType="number" />
+
+  <!-- 商品信息 -->
+  <view class="page-section search-result">
+
+    <Cell arrow="{{false}}">
+      <text slot="label" class="bold search-result-title"> 搜索历史</text>
+    </Cell>
+
+    <Cell wx:for="{{searchRecord}}"
+          wx:key="index"
+          label="{{item.skuID}}"
+          noPadding>
+      <text slot="value" class="sku-desc">{{item.wareIntroduction}}</text>
+    </Cell>
+
+  </view>
+
+
+  <!-- 页面按钮 -->
+  <c-button text="确定"></c-button>
+
+</view>

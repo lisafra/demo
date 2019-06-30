@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "会员注册",
+  "usingComponents": {
+    "c-button": "/components/Button/Button",
+    "Cell": "/components/Cell/Cell"
+  }
+}

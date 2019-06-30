@@ -1,0 +1,70 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx49e60dc25f4ee001",
+	"projectname": "AgentOrderForCHJ",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 4,
+			"list": [
+				{
+					"id": -1,
+					"name": "会员注册",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "代下单",
+					"pathName": "pages/order/order",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索商品",
+					"pathName": "pages/searchWares/searchWares",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "收货人信息填写",
+					"pathName": "pages/consigneeInfo/consigneeInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "选择城市区域",
+					"pathName": "pages/selectArea/selectArea"
+				}
+			]
+		}
+	}
+}

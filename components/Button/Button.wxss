@@ -1,0 +1,27 @@
+/* components/Button/Button.wxss */
+
+.page-footer{
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9;
+  min-height: 150rpx;
+  background: #FFFFFF;
+  box-shadow: 0 -2px 6px 0 rgba(0,0,0,0.09);
+}
+
+.page-footer-placeholder{
+  height: 130rpx;
+  background-color: transparent;
+}
+
+.theme-button{
+  width: 490rpx;
+  height: 80rpx;
+  margin-top: 26rpx;
+  border-radius: 80rpx;
+  box-shadow: 0 5rpx 10rpx 0 rgba(250,145,32,0.42);
+}
+

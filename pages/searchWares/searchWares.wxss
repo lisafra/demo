@@ -1,0 +1,13 @@
+/* pages/searchWares/searchWares.wxss */
+.search-result{
+  padding: 0 20rpx 30rpx;
+  min-height: 476rpx;
+}
+
+.sku-desc{
+  margin-left: 84rpx;
+  width: 430rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

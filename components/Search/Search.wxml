@@ -1,0 +1,7 @@
+<!--components/Search/Search.wxml-->
+<view class="search-container">
+  <input class="search-input" type="{{inputType}}" placeholder="{{placeholder}}"/>
+  <view class="search-btn">
+    <image class="icon-search" src="/images/search.png"></image>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/register/register",
+    "pages/searchWares/searchWares",
+    "pages/order/order",
+    "pages/consigneeInfo/consigneeInfo",
+    "pages/selectArea/selectArea"
+  ],
+  "networkTimeout": {
+    "request": 10000
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#FF6C6C",
+    "navigationBarTitleText": "诚和敬",
+    "backgroundColor": "#F9F2E8",
+    "navigationBarTextStyle": "white"
+  }
+}

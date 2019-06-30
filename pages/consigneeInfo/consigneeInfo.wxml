@@ -1,0 +1,43 @@
+<!--pages/consigneeInfo/consigneeInfo.wxml-->
+<view class="page-container">
+
+  <!-- 收货人信息填写 -->
+  <view class="page-section consignee-info-fill">
+
+    <Cell label="姓名">
+      <input slot="value" placeholder="请输入"/>
+    </Cell>
+
+    <Cell label="手机号">
+      <input slot="value" class="strong" type="number" value="18210200597"/>
+    </Cell>
+
+    <Cell label="省市区">
+      <view slot="value" class="display-center">
+        请选择
+        <image class="icon-position" src="/images/position.png"></image>
+      </view>
+    </Cell>
+
+    <Cell label="详细地址" line="{{false}}">
+      <input slot="value" placeholder="请输入"/>
+    </Cell>
+
+  </view>
+
+  <!-- 常用地址 -->
+  <block>
+    <view class="group-title">
+      <text>常用地址</text>
+    </view>
+
+    <view class="display-space-between">
+      <Adress wx:for="{{historyAdress}}" wx:key="index" data="{{item}}" column="{{2}}" />
+    </view>
+
+  </block>
+
+  <!-- 页面按钮 -->
+  <c-button text="确定" />
+
+</view>

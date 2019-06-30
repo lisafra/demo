@@ -1,0 +1,72 @@
+<!--pages/order/order.wxml-->
+<view class="page-container">
+
+  <!-- 收货人信息 -->
+  <view class="page-section consignee-info" wx:if="{{!consigneeData}}">
+    <text class="page-title-big">{{consignee}}</text>
+    <text class="page-text">{{address}}</text>
+  </view>
+
+  <Adress data="{{consigneeData}}" wx:else/>
+
+  <!-- 商品信息 -->
+  <view class="page-section no-padding order-info">
+
+    <!--选择驿站-->
+    <Cell label="选择驿站" arrow>
+      <text slot="value">{{store}}</text>
+    </Cell>
+
+    <!-- 选择商品 -->
+    <Cell label="选择商品" arrow>
+      <text slot="value">{{sku}}</text>
+    </Cell>
+
+    <!-- 商品购买区 -->
+    <Cell arrow="{{false}}">
+      <text slot="label" class="bold">自营驿站</text>
+    </Cell>
+    <Cell arrow="{{false}}" container>
+      <GoodsItem wx:for="{{wareList}}"
+                 wx:key="index"
+                 wx:for-item="item"
+                 line="{{index < wareList.length - 1}}"
+                 data="{{item}}">
+
+
+      </GoodsItem>
+    </Cell>
+
+    <!-- 自营驿站 -->
+    <Cell label="供应商" arrow>
+      <text slot="value" class="strong">{{supplier}}</text>
+    </Cell>
+
+    <!-- 支付方式 -->
+    <Cell label="支付方式" arrow>
+      <text slot="value" class="strong">{{payType}}</text>
+    </Cell>
+
+    <!-- 价格展示区  -->
+    <Cell line="{{false}}">
+
+      <!-- 下单信息统计 -->
+      <View slot="value" class="cell-indent-right total-price" wx:if="{{totalPrice}}">
+        共 4 件，总价
+        <text class="theme-text">{{totalPrice}}</text>
+      </View>
+
+      <!-- 支付提示 -->
+      <text slot="value" class="cell-indent-right desc-text" wx:else>
+        请根据实际情况选择支付方式
+      </text>
+
+    </Cell>
+
+
+  </view>
+
+  <!-- 页面按钮 -->
+  <c-button text="下单" disabled="{{false}}" />
+
+</view>

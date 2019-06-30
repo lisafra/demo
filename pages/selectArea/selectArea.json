@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "收货人信息",
+  "usingComponents": {
+    "c-button": "/components/Button/Button",
+    "Cell": "/components/Cell/Cell",
+    "Search": "/components/Search/Search"
+  }
+}

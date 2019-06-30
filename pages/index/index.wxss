@@ -1,0 +1,30 @@
+/**index.wxss**/
+.circle-gray-bg{
+  position: absolute;
+  z-index: -1;
+  left: -20vw;
+  top: -290rpx;
+  width: 140vw;
+  height: 120vw;
+  background-color: #D8D8D8;
+  border-radius: 50%;
+}
+
+.menu{
+  justify-content: space-around;
+  margin-top: 400rpx;
+}
+
+.menu-item{
+  height: 140rpx;
+  width: 290rpx;
+  align-items: center;
+}
+
+.icon-wrap {
+  width: 60rpx;
+  height: 60rpx;
+  background: #F4F4F4;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}

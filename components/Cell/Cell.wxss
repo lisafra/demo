@@ -1,0 +1,50 @@
+/* components/Cell/Cell.wxss */
+.c-cell{
+  min-height: 94rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cell-padding{
+  padding: 0 20rpx;
+}
+
+.c-cell.block{
+  flex-direction: column;
+}
+
+.c-cell input{
+  text-align: right;
+}
+
+.line{
+  border-bottom: 2rpx solid rgba(0,0,0,0.09);
+}
+
+.c-cell-right{
+  display: flex;
+  align-items: center;
+}
+
+.icon-arrow{
+  margin-left: 16rpx;
+  margin-right: 10rpx;
+  width: 14rpx;
+  height: 20rpx;
+  position: relative;
+}
+
+.icon-arrow:after{
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
