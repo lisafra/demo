@@ -13,7 +13,7 @@
     </Cell>
 
     <Cell label="省市区">
-      <view slot="value" class="display-center">
+      <view slot="value" class="display-center" bindtap="navigateTo" data-url="{{globalData.path.selectArea}}">
         请选择
         <image class="icon-position" src="/images/position.png"></image>
       </view>
