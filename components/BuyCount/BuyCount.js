@@ -27,9 +27,6 @@ Component({
   }
   
   observers: {
-    'num': function(num) {
-      this.triggerEvent('change', {value: num})
-      },
       'value': function(value) {
         this.setData({num: value})
       }
@@ -40,6 +37,10 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    _emitChange(num) {
+      this.triggerEvent('change', {value: num})
+    },
+    
     bindMinus: function() {
       var num = this.data.num;
       // 如果大于1时，才可以减
@@ -50,9 +51,10 @@ Component({
       var minusStatus = num <= 1 ? 'disabled' : 'normal';
       // 将数值与状态写回
       this.setData({
-        num: num,
+        num,
         minusStatus: minusStatus
       });
+      this._emitChange(num)
     },
     /* 点击加号 */
     bindPlus: function() {
@@ -63,17 +65,19 @@ Component({
       var minusStatus = num < 1 ? 'disabled' : 'normal';
       // 将数值与状态写回
       this.setData({
-        num: num,
+        num,
         minusStatus: minusStatus
       });
+      this._emitChange(num)
     },
     /* 输入框事件 */
     bindManual: function(e) {
       var num = e.detail.value;
       // 将数值与状态写回
       this.setData({
-        num: num
+        num
       });
+      this._emitChange(num)
     }
   }
 })
