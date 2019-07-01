@@ -72,5 +72,9 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  
+  navigatorTo（e）{
+    wx.navigatorTo({url: e.detail.url})
   }
 })
