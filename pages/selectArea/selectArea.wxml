@@ -5,8 +5,8 @@
   <Search placeholder="请输入省份/城市/市区名称" inputType="number" />
 
   <!-- 区域选择 -->
-  <view class="page-section search-result">
-
+  <view class="page-section pick-city">
+    <city-picker bind:selected="selectCity" data=""></city-picker>
   </view>
 
   <!-- 页面按钮 -->

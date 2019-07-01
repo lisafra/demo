@@ -1,0 +1,5 @@
+/* components/Button/Button.wxss */
+
+.city-picker{
+  background-color: #fff;
+}
