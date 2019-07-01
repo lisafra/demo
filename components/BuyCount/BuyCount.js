@@ -16,8 +16,12 @@ Component({
     // 使用data数据对象设置样式名
     minusStatus: 'disabled'
   },
-
-
+  
+  observers: {
+    'num': function(num) {
+      this.triggerEvent('change', {value: num})
+    }
+  },
 
   /**
    * 组件的方法列表
