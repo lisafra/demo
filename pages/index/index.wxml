@@ -13,7 +13,7 @@
   <view class="circle-gray-bg"></view>
   <view class="menu display-row">
     <view class="page-section menu-item display-row"
-          data-type="navigator"
+          bindtap="navigatorTo"
           data-url="{{globalData.path[item.linkTo]}}"
           wx:for="{{pageText.nav}}"
           wx:key="index"
