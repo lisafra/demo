@@ -10,7 +10,7 @@
   <view class="product-info space-between {{line ? 'line' : ''}}">
     <view class="space-between">
       <text class="product-desc">{{data.wareName}}</text>
-      <view class="delete-btn">
+      <view class="delete-btn" bindtap="deleteItem">
         <image slot="top-row"
                class="delete-icon"
                src="asserts/bin.png"></image>
@@ -20,7 +20,7 @@
 
     <view class="space-between">
       <text class="product-price">{{data.storePrice}}</text>
-      <BuyCount />
+      <BuyCount bindchange="changeBuyCount" />
     </view>
 
   </view>
