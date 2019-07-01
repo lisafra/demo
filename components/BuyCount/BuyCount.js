@@ -4,7 +4,10 @@ Component({
    * 组件的属性列表
    */
   properties: {
-
+    vaule: {
+      type: Number,
+      value: 1
+    }
   },
 
   /**
@@ -17,11 +20,21 @@ Component({
     minusStatus: 'disabled'
   },
   
+  lifetimes: {
+    attached () {
+      this.setData({num: value})
+    }
+  }
+  
   observers: {
     'num': function(num) {
       this.triggerEvent('change', {value: num})
-    }
+      },
+      'value': function(value) {
+        this.setData({num: value})
+      }
   },
+  
 
   /**
    * 组件的方法列表
