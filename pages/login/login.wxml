@@ -1,0 +1,18 @@
+<!--pages/login/login.wxml-->
+<view class="page-container">
+  <view class="circle-gray-bg"></view>
+  <view class="page-section login-module">
+    <Cell label="用户名">
+      <input slot="value" placeholder="请输入用户名"/>
+    </Cell>
+
+    <Cell label="密码">
+      <input slot="value"
+             placeholder="请输入密码"
+             type="password"
+             value="18210200597"/>
+    </Cell>
+  </view>
+
+</view>
+

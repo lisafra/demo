@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "c-button": "/components/Button/Button",
+    "Cell": "/components/Cell/Cell"
+  }
+}
