@@ -1,7 +1,7 @@
 //index.js
 const app = getApp()
-import { isLogin } from '../../api/account'
-const { globalData } = app
+import { isLogin, login, getCaptcha } from '../../api/account'
+const { globalData, navigateTo } = app
 
 Page({
   data: {
@@ -22,14 +22,27 @@ Page({
     },
     globalData
   },
-  onLoad: function () {
-    isLogin().then(res => {
-      console.log('是否登录成功', res)
-    })
-  },
 
-  navigateTo (e) {
-    const { url } = e.currentTarget.dataset
-    wx.navigateTo({ url })
+  navigateTo,
+
+  onLoad: function () {
+
+    getCaptcha().then(res => {
+
+    })
+
+    login({
+      account: 'ylk',
+      password: 123456
+    }).then(res => {
+      console.log('登录成功了吗', res)
+      if (res.data) {
+        app.globalData.userInfo.name = res.data
+      }
+      console.log(getApp())
+      isLogin().then(res => {
+        console.log('是否登录成功', res)
+      })
+    })
   }
 })

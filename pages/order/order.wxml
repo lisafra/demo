@@ -2,24 +2,33 @@
 <view class="page-container">
 
   <!-- 收货人信息 -->
+  <view bindtap="navigateTo" data-url="consigneeInfo">
+    <view class="page-section consignee-info" wx:if="{{!consigneeInfo}}" >
+      <text class="page-title-big">收货人信息</text>
+      <text class="page-text">请输入收货人地址信息</text>
+    </view>
 
-  <view class="page-section consignee-info" wx:if="{{!consigneeData}}">
-    <text class="page-title-big">收货人信息</text>
-    <text class="page-text">请输入收货人地址信息</text>
+    <Adress data="{{consigneeInfo}}" wx:else/>
   </view>
 
-  <Adress data="{{consigneeData}}" wx:else/>
+
 
   <!-- 商品信息 -->
   <view class="page-section no-padding order-info">
 
     <!--选择驿站-->
     <Cell label="选择驿站" arrow>
-      <text slot="value">{{store}}</text>
+      <!--<text slot="value">{{storeList[storeIndex].name}}</text>-->
+      <picker slot="value" bindchange="bindPickerChange"
+              value="{{storeList[storeIndex].name}}"
+              data-type="storeIndex"
+              range="{{storeListPickerData}}">
+        <view class="weui-input">{{storeList[storeIndex].name}}</view>
+      </picker>
     </Cell>
 
     <!-- 选择商品 -->
-    <Cell label="选择商品" arrow>
+    <Cell label="选择商品" arrow bindtap="navigateTo" data-url="searchWares">
       <text slot="value">{{sku}}</text>
     </Cell>
 
@@ -45,7 +54,7 @@
 
     <!-- 支付方式 -->
     <Cell label="支付方式" arrow>
-      <text slot="value" class="strong">{{payType}}</text>
+      <text slot="value" class="strong">{{payTypeConfig[orderPayType]}}</text>
     </Cell>
 
     <!-- 价格展示区  -->

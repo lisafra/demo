@@ -1,35 +1,116 @@
 // pages/consigneeInfo/consigneeInfo.js
+const app = getApp()
+const { globalData, navigateTo, decodeURL} = app
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    historyAdress: [
-      {
-        buyerName: '王阿姨',
-        buyerMobile: '189****2325',
-        buyerProvince: '北京市',
-        buyerCity: '',
-        buyerAddress: '通州区梨园镇XXXX华业东方玫瑰C区4号60号楼，1803室，快递放门口',
-      },
-      {
-        buyerName: '王阿姨',
-        buyerMobile: '189****2325',
-        buyerProvince: '北京市',
-        buyerCity: '',
-        buyerAddress: '通州区梨园镇XXXX华业东方玫瑰C区4号60号楼，1803室，快递放门口',
-      }
-    ]
-
+    consigneeInfo: null,
+    historyAddress: []
   },
+
+  navigateTo,
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 初始化收货人数据
+    const {province, city, district, detailInfo} = decodeURL(options)
+    //  初始化历史收货人数据
+    const historyAddress = wx.getStorageSync('historyAddress') || []
+    // 获取缓存的姓名和手机号
+    const {userName, telNumber} = wx.getStorageSync('consigneeInfo') || {}
+
+    console.log('获取页面数据', decodeURL(options), wx.getStorageSync('consigneeInfo'))
+
+    this.setData({
+      historyAddress,
+      consigneeInfo: {
+        userName: userName || '',
+        telNumber: telNumber || '',
+        provinceName: province || '',
+        cityName: city || '',
+        countyName: district || '',
+        detailInfo: detailInfo || ''
+      }
+    })
 
   },
+
+  // 输入绑定
+  inputSetData(e) {
+    const {key} = e.currentTarget.dataset
+    const {value} = e.detail
+    let consigneeInfo = this.data.consigneeInfo
+    consigneeInfo[key] = value
+    this.setData({consigneeInfo})
+    console.log('input', e, key, value)
+  },
+
+  // 选择城市区域
+  selectArea() {
+    console.log(this.data)
+    wx.setStorageSync('consigneeInfo', this.data.consigneeInfo)
+    navigateTo({url: 'selectArea'})
+  },
+
+  selectAddress(e) {
+    const {address} = e.currentTarget.dataset
+    // 方案一：直接跳转页面
+    this.onConfirm(address, false)
+    // 方案二：将数据回填，点击确定再跳转页面
+    // const {userName, telNumber} = address
+    // console.log('选择默认的收货地址', e.currentTarget.dataset, address)
+    // this.setData({
+    //   userName,
+    //   telNumber,
+    //   consigneeInfo: address
+    // })
+  },
+
+  verifyForm () {
+    // 城市可以为空
+    console.log(this.data.consigneeInfo)
+    const {userName, telNumber, provinceName, countyName, detailInfo} = this.data.consigneeInfo
+    return userName && telNumber && provinceName && countyName && detailInfo
+  },
+
+  onConfirm(consigneeInfo, newAdd = true) {
+
+    // 点击页面的确定按钮时, 表示新增一个收货人
+    if (newAdd) {
+
+      if (!this.verifyForm()) {
+        wx.showToast({
+          title: '信息填写不全',
+          icon: 'warn'
+        })
+        return
+      }
+
+      consigneeInfo  = this.data.consigneeInfo
+      // 将新增的收货人推入本地缓存里
+      wx.setStorageSync('historyAddress', this.data.historyAddress.concat(consigneeInfo))
+    }
+
+    // 清空缓存的姓名和手机号
+    wx.setStorageSync('consigneeInfo', {})
+    console.log('查看数据保存成功了吗', consigneeInfo)
+
+    navigateTo({
+      url: 'order',
+      params: {
+        consigneeInfo
+      }
+    })
+  },
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成

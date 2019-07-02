@@ -14,7 +14,7 @@
   <view class="menu display-row">
     <view class="page-section menu-item display-row"
           bindtap="navigateTo"
-          data-url="{{globalData.path[item.linkTo]}}"
+          data-url="{{item.linkTo}}"
           wx:for="{{pageText.nav}}"
           wx:key="index"
           wx:for-item="item">

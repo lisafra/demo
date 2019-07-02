@@ -1,10 +1,12 @@
 // components/Button/Button.js
+const citys = wx.getStorageSync('citys')
+
 Component({
   /**
    * 组件的属性列表
    */
   properties: {
-    value: {
+    data: {
       type: Object,
       value: {
         province: '',
@@ -19,18 +21,22 @@ Component({
    */
   data: {
     provinces: [],
-    province: "北京市",
     citys: [],
-    city: "北京城区",
-    countys: [],
-    county: "昌平区",
+    districts: [],
     value: [0, 0, 0],
     isShow: false
   },
 
-  lifetimes: {
-    attached() {
-      let citys = cityData['districts'][0]['districts'];
+  attached() {
+    this.initCityData()
+  },
+
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+    initCityData () {
       citys.sort((a, b) => {
         if (a['adcode'] - 0 < b['adcode'] - 0) {
           return -1;
@@ -40,54 +46,36 @@ Component({
         }
         return 0;
       });
+
       this.setData({
         provinces: citys,
         citys: citys[0]['districts'],
-        countys: citys[0]['districts'][0]['districts']
+        districts: citys[0]['districts'][0]['districts']
       });
+
+      console.log('获取城市数据', this.data)
     },
 
-  },
-
-  /**
-   * 组件的方法列表
-   */
-  methods: {
     bindChange(e) {
-      const val = e.detail.value;
+      let val = e.detail.value;
+      const { value, provinces} = this.data
+
       this.setData({
         value: val,
-        citys: this.data.provinces[val[0]]['districts'].length > 0 ? this.data.provinces[val[0]]['districts'] : [],
-        countys: this.data.provinces[val[0]]['districts'].length > 0 ? (this.data.provinces[val[0]]['districts'][val[1]] ? this.data.provinces[val[0]]['districts'][val[1]]['districts'] : []) : ''
+        citys: provinces[val[0]]['districts'].length > 0 ? provinces[val[0]]['districts'] : [],
+        districts: provinces[val[0]]['districts'].length > 0 ? (provinces[val[0]]['districts'][val[1]] ? provinces[val[0]]['districts'][val[1]]['districts'] : []) : ''
       })
+      this.onConfirm()
     },
-    closeModal() {
-      this.setData({
-        isShow: false
-      })
-    },
-    togglePicker() {
-      this.setData({
-        isShow: !this.data.isShow
-      })
-    },
-    cancel() {
-      this.setData({
-        isShow: false
-      })
-    },
-    done() {
-      const val = this.data.value;
-      this.setData({
-        province: this.data.provinces[val[0]].name,
-        city: this.data.provinces[val[0]]['districts'].length > 0 ? this.data.provinces[val[0]]['districts'][val[1]].name : '',
-        county: this.data.provinces[val[0]]['districts'].length > 0 ? (this.data.provinces[val[0]]['districts'][val[1]]['districts'][val[2]] ? this.data.provinces[val[0]]['districts'][val[1]]['districts'][val[2]].name : '') : '',
-        isShow: false
-      });
-      this.triggerEvent('selected', {
-        province: this.data.province,
-        city: this.data.city,
-        county: this.data.county
+
+    onConfirm() {
+      const {value, provinces, citys, districts} = this.data
+      const [province, city, district] = value;
+      console.log('选择的城市变了', this.data)
+      this.triggerEvent('selected',{
+        province: provinces[province].name,
+        city: citys.length > 1 ? citys[city].name : '',
+        district: districts[district].name
       })
     }
   }

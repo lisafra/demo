@@ -1,5 +1,5 @@
 <!--components/Adress/Adress.wxml-->
 <view class="consignee-info {{column > 1 ? 'small' : ''}}" wx:if="{{data}}">
-  <text class="consignee-title">{{data.buyerName}} {{data.buyerMobile}}</text>
-  <text class="page-text">{{data.buyerProvince}}{{data.buyerCity}}{{data.buyerAddress}}</text>
+  <text class="consignee-title">{{data.userName}} {{data.telNumber}}</text>
+  <text class="page-text">{{data.provinceName}}{{data.cityName}}{{data.countyName}}{{data.detailInfo}}</text>
 </view>

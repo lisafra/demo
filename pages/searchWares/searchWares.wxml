@@ -2,7 +2,7 @@
 <view class="page-container">
 
   <!-- 搜索商品 -->
-  <Search placeholder="请输入SKU编号" inputType="number" />
+  <Search placeholder="请输入SKU编号" inputType="number" bindsearch="searchWares"/>
 
   <!-- 商品信息 -->
   <view class="page-section search-result">

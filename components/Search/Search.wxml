@@ -1,7 +1,12 @@
 <!--components/Search/Search.wxml-->
 <view class="search-container">
-  <input class="search-input" type="{{inputType}}" placeholder="{{placeholder}}"/>
-  <view class="search-btn">
+  <input class="search-input"
+         type="{{inputType}}"
+         value="{{keyword}}"
+         bindinput="onInput"
+         placeholder="{{placeholder}}"
+         disabled="{{disabled}}"/>
+  <view class="search-btn" bindtap="onSearch">
     <image class="icon-search" src="/images/search.png"></image>
   </view>
 </view>

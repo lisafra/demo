@@ -1,7 +1,7 @@
 <!--components/Cell/Cell.wxml-->
 <view class="c-cell {{noPadding ? '': 'cell-padding'}} {{line ? 'line' : ''}} {{container ? 'block' : ''}}">
 
-  <view wx:if="{{!container}}">
+  <view class="c-cell-left" wx:if="{{!container}}">
     <text class="c-cell-label" wx:if="{{label}}">{{label}}</text>
     <slot name="label"></slot>
   </view>

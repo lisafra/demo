@@ -1,30 +1,15 @@
 // pages/searchWares/searchWares.js
+
+import {getWareList} from '../../api/wares'
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    searchResult: [
-      {
-        "groupPrice": 0,
-        "groupStock": "string",
-        "skuID": 0,
-        "storeID": 0,
-        "storePrice": 0,
-        "storeStock": "string",
-        "supplierID": 0,
-        "wareBusinessType": 0,
-        "wareIntroduction": "string",
-        "wareName": "string",
-        "wareOrigin": "string",
-        "wareProductType": 0,
-        "wareSlogan": "string",
-        "wareTemperatureDescription": 0,
-        "wareTypeOfMeasurement": 0,
-        "wareUnitOfMeasurement": 0
-      }
-    ],
+    supplierID: '',
+    searchResult: [],
     searchRecord: [
       {
         "groupPrice": 0,
@@ -70,7 +55,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+  },
 
+  searchWares (e) {
+    getWareList({
+      supplierID: e.detail.keyword - 0
+    }).then(res => {
+
+    })
   },
 
   /**

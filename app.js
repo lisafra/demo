@@ -1,5 +1,4 @@
 //app.js
-// import { isLogin } from 'api/account'
 
 
 App({
@@ -8,9 +7,9 @@ App({
     this.getCityData()
 
     // 登录
-    wx.login({
-      success: res => {}
-    })
+    // wx.login({
+    //   success: res => {}
+    // })
 
     // 获取
 
@@ -52,8 +51,57 @@ App({
     }
   },
 
+  navigateTo (e){
+    if (!e) return
+    const { url, navigateType, params } = e.url ? e : e.currentTarget.dataset
+    console.log('监听路由', e, params)
+
+    wx[!navigateType ? 'navigateTo' : navigateType]({
+      url: this.formatUrlParams(this.globalData.path[url], params)
+    })
+  },
+
+  formatUrlParams(url, params) {
+    let stringParams = !params ? '' : '?'
+
+    if (params) {
+      const paramKeys = Object.keys(params)
+      paramKeys.forEach((key, index) => {
+        const endSymbol = index < paramKeys.length - 1 ? '&' : ''
+        const value = params[key]
+        const formatValue = typeof value === 'string' ? encodeURIComponent(value) : JSON.stringify(value)
+        stringParams += `${key}=${formatValue}${endSymbol}`
+      })
+    }
+
+    return url + stringParams
+  },
+
+  decodeURL (params = {}) {
+    Object.keys(params).forEach(key=> {
+      let value = params[key]
+      if (typeof value === 'object') value = JSON.stringify(value)
+      console.log('查看参数', value, typeof value)
+      params[key] = value.indexOf('{') !== -1 ? JSON.parse(value) : decodeURIComponent(value)
+    })
+    return params
+  },
+
+  getLocation() {
+    const that = this
+    wx.getLocation({
+      success(res) {
+        console.log(res)
+        that.setData({
+          hasLocation: true,
+          location: formatLocation(res.longitude, res.latitude)
+        })
+      }
+    })
+  },
+
   globalData: {
-    userInfo: null,
+    userInfo: {},
     env: 'pre',
     path: {
       index: '/pages/index/index',
@@ -66,11 +114,13 @@ App({
     domain: {
       pre: {
         sso: 'sso-api-pre.chj-inn.com',
-        man: 'man-api-pre.chj-inn.com'
+        man: 'man-api-pre.chj-inn.com',
+        qqMap: 'apis.map.qq.com',
       },
       online: {
         sso: 'sso-api.chj-inn.com',
-        man: 'man-api.chj-inn.com'
+        man: 'man-api.chj-inn.com',
+        qqMap: 'apis.map.qq.com'
       }
     }
   }

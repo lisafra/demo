@@ -5,39 +5,60 @@
   <view class="page-section consignee-info-fill">
 
     <Cell label="姓名">
-      <input slot="value" placeholder="请输入"/>
+      <input slot="value" value="{{consigneeInfo.userName}}" placeholder="请输入"
+             data-key="userName"
+             bindinput="inputSetData"/>
     </Cell>
 
-    <Cell label="手机号">
-      <input slot="value" class="strong" type="number" value="18210200597"/>
+    <Cell label="手机号" >
+      <input slot="value" class="strong" type="number"
+             maxlength="11"
+             placeholder="请输入"
+             data-key="telNumber"
+             bindinput="inputSetData"
+             value="{{consigneeInfo.telNumber}}"/>
     </Cell>
 
     <Cell label="省市区">
-      <view slot="value" class="display-center" bindtap="navigateTo" data-url="{{globalData.path.selectArea}}">
-        请选择
-        <image class="icon-position" src="/images/position.png"></image>
+      <view slot="value" class="display-center" bindtap="selectArea">
+
+        <text wx:if="{{consigneeInfo.provinceName}}">{{consigneeInfo.provinceName}} {{consigneeInfo.cityName}} {{consigneeInfo.countyName}}</text>
+        <text wx:else>请选择</text>
+
+
+        <image class="icon-position"
+               src="/images/position.png"></image>
       </view>
     </Cell>
 
     <Cell label="详细地址" line="{{false}}">
-      <input slot="value" placeholder="请输入"/>
+      <input slot="value" placeholder="请输入"
+             data-key="detailInfo"
+             bindinput="inputSetData"
+             value="{{consigneeInfo.detailInfo}}"/>
     </Cell>
 
   </view>
 
   <!-- 常用地址 -->
-  <block>
+  <block wx:if="{{historyAddress.length}}">
     <view class="group-title">
       <text>常用地址</text>
     </view>
 
     <view class="display-space-between">
-      <Adress wx:for="{{historyAdress}}" wx:key="index" data="{{item}}" column="{{2}}" />
+      <Adress wx:for="{{historyAddress}}"
+              wx:key="index"
+              data="{{item}}"
+              column="{{2}}"
+              data-address="{{item}}"
+              bindtap="selectAddress"
+      />
     </view>
 
   </block>
 
   <!-- 页面按钮 -->
-  <c-button text="确定" />
+  <c-button text="确定" bindtap="onConfirm"/>
 
 </view>

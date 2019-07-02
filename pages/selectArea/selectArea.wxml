@@ -2,14 +2,20 @@
 <view class="page-container">
 
   <!-- 搜索区域 -->
-  <Search placeholder="请输入省份/城市/市区名称" inputType="number" />
+  <Search inputType="number" disabled
+          placeholder="请输入省份/城市/市区名称"
+          value="{{addressInfo.address}}"
+          bindtap="selectAddress"/>
 
   <!-- 区域选择 -->
   <view class="page-section pick-city">
-    <city-picker bind:selected="selectCity" data=""></city-picker>
+    <city-picker bind:selected="selectCityArea" data="{{pickerValue}}"></city-picker>
   </view>
 
   <!-- 页面按钮 -->
-  <c-button text="确定" />
+  <c-button text="确定" bindtap="navigateTo"
+            data-navigateType="navigateBack"
+            data-url="consigneeInfo"
+            data-params="{{addressInfo}}"/>
 
 </view>
