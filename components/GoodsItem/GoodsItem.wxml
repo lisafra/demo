@@ -19,7 +19,7 @@
     </view>
 
     <view class="space-between">
-      <text class="product-price">{{data.storePrice}}</text>
+      <text class="product-price">{{data.priceLabel}}</text>
       <BuyCount bindchange="changeBuyCount" />
     </view>
 

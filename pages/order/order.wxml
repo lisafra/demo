@@ -29,7 +29,7 @@
 
     <!-- 选择商品 -->
     <Cell label="选择商品" arrow bindtap="navigateTo" data-url="searchWares">
-      <text slot="value">{{sku}}</text>
+      <text slot="value">{{!wareList ? '请输入SKU编号' : wareList[wareIndex].skuID}}</text>
     </Cell>
 
     <!-- 商品购买区 -->
@@ -49,7 +49,7 @@
 
     <!-- 自营驿站 -->
     <Cell label="供应商" arrow>
-      <text slot="value" class="strong">{{supplier}}</text>
+      <text slot="value" class="strong">{{supplierList[supplierIndex].name}}</text>
     </Cell>
 
     <!-- 支付方式 -->
@@ -62,7 +62,7 @@
 
       <!-- 下单信息统计 -->
       <View slot="value" class="cell-indent-right total-price" wx:if="{{totalPrice}}">
-        共 4 件，总价
+        共 {{totalCount}} 件，总价
         <text class="theme-text">{{totalPrice}}</text>
       </View>
 

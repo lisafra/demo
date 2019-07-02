@@ -4,7 +4,7 @@ const { globalData, navigateTo, decodeURL } = app
 
 import { formatPrice } from '../../utils/format.js'
 
-import {getSupplierList, getStoreList, getStoreUser} from '../../api/wares'
+import {getSupplierList, getStoreList, getStoreUser, getWareList} from '../../api/wares'
 import {order} from '../../api/order'
 
 Page({
@@ -13,66 +13,23 @@ Page({
    */
   data: {
     consigneeInfo: null,
-    sku: '请输入SKU编号',
-    storeIndex: 0,
-    supplier: '诚和敬自营驿站',
     payTypeConfig: {
       1: '现金支付',
       2: '其它支付'
     },
-    orderPayType: 1,
-    totalPrice: 0,
-    skuInfoVOs: [
-      {
-        skuCount: 1,
-        skuID: 123
-      },
-      {
-        skuCount: 1,
-        skuID: 345
-      }
-    ],
-    storeListPickerData: ['月球', '月球'],
+    storeListPickerData: null,
     storeList: [{
       name: '请选择'
     }],
-    supplierList: [
-      {
-        "abbreviation": "string",
-        "code": "string",
-        "contactName": "string",
-        "contactPhone": "string",
-        "created": "2019-06-30T06:07:36.981Z",
-        "groupType": 0,
-        "id": 0,
-        "isEnable": true,
-        "lastOperatorAccount": "string",
-        "modified": "2019-06-30T06:07:36.981Z",
-        "name": "string",
-        "supplierStatus": 0,
-        "supplierType": 0
-      }
-    ],
-    wareList: [
-      {
-        "groupPrice": 0,
-        "groupStock": "string",
-        "skuID": 0,
-        "storeID": 0,
-        "storePrice": 1989,
-        "storeStock": "string",
-        "supplierID": 0,
-        "wareBusinessType": 0,
-        "wareIntroduction": "string",
-        "wareName": "端午节嘉兴粽子咸鸭蛋酱鸭大礼包端午十粽十味双层竹篮礼篮1968g",
-        "wareOrigin": "string",
-        "wareProductType": 0,
-        "wareSlogan": "string",
-        "wareTemperatureDescription": 0,
-        "wareTypeOfMeasurement": 0,
-        "wareUnitOfMeasurement": 0
-      }
-    ]
+    storeIndex: 0,
+    supplierIndex: 0,
+    supplierList: null,
+    wareIndex: 0,
+    wareList: null,
+    orderPayType: 1,
+    skuInfoVOs: null,
+    totalCount: 0,
+    totalPrice: 0
   },
 
   navigateTo,
@@ -83,36 +40,55 @@ Page({
   onLoad: function (options) {
 
     const {consigneeInfo} = decodeURL(options)
+    if (consigneeInfo) this.setData({consigneeInfo})
 
-    if (consigneeInfo) {
-      this.setData({consigneeInfo})
-    }
     console.log('获取页面参数', this.data, consigneeInfo)
-
-    getStoreList({
-      VO: {}
-    }).then(res => {
-      if (res.success) {
-        const storeList = res.data && res.data.records
-        this.setData({
-          storeListPickerData: storeList.map(item => item.name),
-          storeList: this.data.storeList.concat(storeList)
-        })
-
-        console.log(' 【展示驿站数据】', this.data)
-      }
-    })
 
     getStoreUser({
       name: globalData.userInfo.name
     }).then(res => {
-
+      if (res.success) {
+          const storeList = [res.data]
+          this.setData({
+            storeListPickerData: storeList.map(item => item.name),
+            storeList: this.data.storeList.concat(storeList)
+          })
+          console.log(' 【展示驿站数据】', this.data)
+      }
     })
 
     getSupplierList().then(res => {
+      if (res.success) {
+        this.setData({supplierList: res.data})
+        getWareList({
+          supplierID: res.data[this.data.supplierIndex].id
+        }).then(res => {
+          this.setData({wareList: res.data.map(item => {
+            item.buyCount = 1
+            item.priceLabel = `￥${item.storePrice}`
+            return item
+          })})
+          this.computeOrderPriceInfo()
+        })
+        console.log(' 【展示供应商数据】', this.data)
+      }
+    })
+  },
 
+  computeOrderPriceInfo () {
+    let totalPrice = 0
+    let totalCount = 0
+    let skuInfoVOs = []
+    this.data.wareList.forEach(item => {
+      totalCount += item.buyCount
+      totalPrice += (item.storePrice * item.buyCount)
+      skuInfoVOs.push({
+        skuCount: item.buyCount,
+        skuID: item.skuID
+      })
     })
 
+    this.setData({totalCount, totalPrice, skuInfoVOs})
   },
 
   /**
@@ -126,7 +102,7 @@ Page({
     console.log('【pick change】', e)
     const {value} = e.detail
     this.setData({
-      storeIndex: value
+      storeIndex: value - 0 + 1
     })
   },
 
@@ -154,18 +130,19 @@ Page({
 
   submitOrder () {
 
-    const {orderPayType, skuInfoVOs, storeIndex, storeList, supplier, consigneeInfo} = this.data
+    const {orderPayType, skuInfoVOs, storeIndex, storeList, supplierList, supplierIndex, consigneeInfo} = this.data
+    const storeId = storeList[storeIndex].id
+    const supplierId = supplierList[supplierIndex].id
 
     // 下单前校验
     if (!this.orderVerify(consigneeInfo, 'consigneeInfo')) return
-    if (!this.orderVerify(storeIndex, 'storeId')) return
-    if (!this.orderVerify(supplier, 'supplier')) return
+    if (!this.orderVerify(storeId, 'storeId')) return
+    if (!this.orderVerify(supplierId, 'supplier')) return
 
     const orderInfoVO = {
       orderPayType,
-      // storeId: storeList[storeIndex].id,
-      storeId: 0,
-      supplier,
+      storeId,
+      supplier: supplierId,
       skuInfoVOs,
       buyerName: consigneeInfo.userName,
       buyerMobile: consigneeInfo.telNumber,
