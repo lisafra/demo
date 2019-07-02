@@ -1,21 +1,22 @@
 // pages/order/order.js
-Page({
+const app = getApp()
+const { globalData } = app
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    consignee: '收货人信息',
-    address: '请输入收货人地址信息',
     payType: '现金支付',
     orderPayType: 1,
-    consigneeData: {
-      buyerName: '王阿姨',
-      buyerMobile: '189****2325',
-      buyerProvince: '北京市',
-      buyerCity: '',
-      buyerAddress: '通州区梨园镇XXXX华业东方玫瑰C区4号60号楼，1803室，快递放门口'
-    },
+    consigneeData: null,
+    // consigneeData: {
+    //   buyerName: '王阿姨',
+    //   buyerMobile: '189****2325',
+    //   buyerProvince: '北京市',
+    //   buyerCity: '',
+    //   buyerAddress: '通州区梨园镇XXXX华业东方玫瑰C区4号60号楼，1803室，快递放门口'
+    // },
     sku: '请输入SKU编号',
     store: '请选择',
     supplier: '诚和敬自营驿站',
@@ -99,9 +100,11 @@ Page({
 
   },
 
-
   submitOrder () {
-    const {buyerAddress, buyerCity, buyerMobile, buyerName, buyerProvince, orderPayType, skuInfoVOs, storeId, supplier} = this.state
+    const {orderPayType, skuInfoVOs, storeId, supplier} = this.data
+    console.log('下单啦', orderPayType, this)
+    this.orderSuccess()
+
     // const params = {
     //   "buyerAddress": "string",
     //   "buyerCity": 0,
@@ -118,6 +121,20 @@ Page({
     //   "storeId": 0,
     //   "supplier": "string"
     // }
+  },
+  // 下单成功后的回调
+  orderSuccess () {
+    wx.showModal({
+      title: '下单成功',
+      content: '您的订单已提交，请登录管理后台查看订单状态。',
+      showCancel: false,
+      confirmColor: '#EF260E',
+      success (res) {
+        if (res.confirm) {
+          wx.navigateTo({url: globalData.path.index})
+        }
+      }
+    })
   },
 
   /**

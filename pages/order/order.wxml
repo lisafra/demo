@@ -2,15 +2,13 @@
 <view class="page-container">
 
   <!-- 收货人信息 -->
-  <view bindtap="navigateTo" data-url="{{globalData.path.consigneeInfo}}">
-    <view class="page-section consignee-info" wx:if="{{!consigneeData}}">
-      <text class="page-title-big">{{consignee}}</text>
-      <text class="page-text">{{address}}</text>
-    </view>
 
-    <Adress data="{{consigneeData}}" wx:else/>
+  <view class="page-section consignee-info" wx:if="{{!consigneeData}}">
+    <text class="page-title-big">收货人信息</text>
+    <text class="page-text">请输入收货人地址信息</text>
   </view>
-  
+
+  <Adress data="{{consigneeData}}" wx:else/>
 
   <!-- 商品信息 -->
   <view class="page-section no-padding order-info">
@@ -21,7 +19,7 @@
     </Cell>
 
     <!-- 选择商品 -->
-    <Cell label="选择商品" arrow bindtap="navigateTo" data-url="{{globalData.path.searchWares}}">
+    <Cell label="选择商品" arrow>
       <text slot="value">{{sku}}</text>
     </Cell>
 
@@ -70,6 +68,6 @@
   </view>
 
   <!-- 页面按钮 -->
-  <c-button text="下单" disabled="{{false}}" />
+  <c-button text="下单" disabled="{{false}}" bindtap="submitOrder"></c-button>
 
 </view>

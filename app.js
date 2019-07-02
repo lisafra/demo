@@ -50,7 +50,7 @@ App({
         }
       })
     }
-  }
+  },
 
   globalData: {
     userInfo: null,

@@ -19,19 +19,19 @@ Component({
     // 使用data数据对象设置样式名
     minusStatus: 'disabled'
   },
-  
+
   lifetimes: {
     attached () {
       this.setData({num: value})
     }
-  }
-  
+  },
+
   observers: {
       'value': function(value) {
         this.setData({num: value})
       }
   },
-  
+
 
   /**
    * 组件的方法列表
@@ -40,7 +40,7 @@ Component({
     _emitChange(num) {
       this.triggerEvent('change', {value: num})
     },
-    
+
     bindMinus: function() {
       var num = this.data.num;
       // 如果大于1时，才可以减
