@@ -19,27 +19,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // 初始化收货人数据
-    const {province, city, district, detailInfo} = decodeURL(options)
     //  初始化历史收货人数据
     const historyAddress = wx.getStorageSync('historyAddress') || []
-    // 获取缓存的姓名和手机号
-    const {userName, telNumber} = wx.getStorageSync('consigneeInfo') || {}
-
-    console.log('获取页面数据', decodeURL(options), wx.getStorageSync('consigneeInfo'))
-
-    this.setData({
-      historyAddress,
-      consigneeInfo: {
-        userName: userName || '',
-        telNumber: telNumber || '',
-        provinceName: province || '',
-        cityName: city || '',
-        countyName: district || '',
-        detailInfo: detailInfo || ''
-      }
-    })
-
+    this.setData({historyAddress})
   },
 
   // 输入绑定
@@ -102,11 +84,10 @@ Page({
     wx.setStorageSync('consigneeInfo', {})
     console.log('查看数据保存成功了吗', consigneeInfo)
 
+    app.globalData.orderInfo.consigneeInfo = consigneeInfo
     navigateTo({
       url: 'order',
-      params: {
-        consigneeInfo
-      }
+      navigateType: 'navigateBack'
     })
   },
 
@@ -123,7 +104,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // 初始化收货人数据
+    const {province, city, district, detailInfo} = app.globalData.orderInfo.addressInfo || {}
+    // 获取缓存的姓名和手机号
+    const {userName, telNumber} = wx.getStorageSync('consigneeInfo') || {}
 
+    this.setData({
+      // historyAddress,
+      consigneeInfo: {
+        userName: userName || '',
+        telNumber: telNumber || '',
+        provinceName: province || '',
+        cityName: city || '',
+        countyName: district || '',
+        detailInfo: detailInfo || ''
+      }
+    })
   },
 
   /**

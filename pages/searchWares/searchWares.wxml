@@ -4,24 +4,35 @@
   <!-- 搜索商品 -->
   <Search placeholder="请输入SKU编号" inputType="number" bindsearch="searchWares"/>
 
-  <!-- 商品信息 -->
-  <view class="page-section search-result">
+  <!-- 商品列表 -->
+  <view class="page-section search-result" wx:if="{{searchResult}}">
 
     <Cell arrow="{{false}}">
-      <text slot="label" class="bold search-result-title"> 搜索历史</text>
+      <text slot="label" class="bold search-result-title"> 搜索结果</text>
     </Cell>
 
-    <Cell wx:for="{{searchRecord}}"
-          wx:key="index"
-          label="{{item.skuID}}"
-          noPadding>
-      <text slot="value" class="sku-desc">{{item.wareIntroduction}}</text>
-    </Cell>
+    <view class="result-item {{item.checked ? 'checked' : ''}}"
+      wx:for="{{searchResult}}"
+      wx:key="index"
+      wx:for-item="item">
+      <!--<image class="icon-check"-->
+             <!--src="asserts/bin.png"></image>-->
 
+      <GoodsItem line="{{false}}" disabled
+                 data="{{item}}" />
+    </view>
+
+    <!-- 历史记录 -->
+    <!--<Cell wx:for="{{searchRecord}}"-->
+          <!--wx:key="index"-->
+          <!--label="{{item.skuID}}"-->
+          <!--noPadding>-->
+      <!--<text slot="value" class="sku-desc">{{item.wareIntroduction}}</text>-->
+    <!--</Cell>-->
   </view>
 
 
   <!-- 页面按钮 -->
-  <c-button text="确定"></c-button>
+  <c-button text="确定" bindtap="onConfirm"></c-button>
 
 </view>

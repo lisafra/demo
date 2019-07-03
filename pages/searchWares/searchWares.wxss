@@ -4,6 +4,14 @@
   min-height: 476rpx;
 }
 
+.result-item{
+  padding: 30rpx;
+}
+
+.result-item.checked{
+  background: #F6F6F6;
+}
+
 .sku-desc{
   margin-left: 84rpx;
   width: 430rpx;

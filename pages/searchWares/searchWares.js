@@ -1,6 +1,10 @@
 // pages/searchWares/searchWares.js
 
 import {getWareList} from '../../api/wares'
+import { formatPrice } from '../../utils/format.js'
+
+const app = getApp()
+const { navigateTo } = app
 
 Page({
 
@@ -9,59 +13,51 @@ Page({
    */
   data: {
     supplierID: '',
-    searchResult: [],
-    searchRecord: [
-      {
-        "groupPrice": 0,
-        "groupStock": "string",
-        "skuID": 239847987,
-        "storeID": 0,
-        "storePrice": 0,
-        "storeStock": "string",
-        "supplierID": 0,
-        "wareBusinessType": 0,
-        "wareIntroduction": "我是一行商品名称标题 需要截字我是一行商品名称标题 需要截字",
-        "wareName": "string",
-        "wareOrigin": "string",
-        "wareProductType": 0,
-        "wareSlogan": "string",
-        "wareTemperatureDescription": 0,
-        "wareTypeOfMeasurement": 0,
-        "wareUnitOfMeasurement": 0
-      },
-      {
-        "groupPrice": 0,
-        "groupStock": "string",
-        "skuID": 562730,
-        "storeID": 0,
-        "storePrice": 0,
-        "storeStock": "string",
-        "supplierID": 0,
-        "wareBusinessType": 0,
-        "wareIntroduction": "我是一行商品名称标题 需要截字我是一行商品名称标题 需要截字",
-        "wareName": "string",
-        "wareOrigin": "string",
-        "wareProductType": 0,
-        "wareSlogan": "string",
-        "wareTemperatureDescription": 0,
-        "wareTypeOfMeasurement": 0,
-        "wareUnitOfMeasurement": 0
-      }
-    ]
-
+    searchResult: null,
+    searchHistoryRecord: null
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const {supplierID} = options
+    if (supplierID) this.setData({supplierID})
+
+    console.log('【初始化页面数据】', this.data)
   },
 
   searchWares (e) {
-    getWareList({
-      supplierID: e.detail.keyword - 0
-    }).then(res => {
 
+    const {keyword} = e.detail
+    const params = {}
+    if (keyword) {
+      const keywordNumber = keyword - 0
+      params[isNaN(keywordNumber) ? 'skuName' : 'skuId'] = isNaN(keywordNumber) ? keyword : keywordNumber
+    }
+    console.log('调用searc接口了', params)
+    // 6501
+    getWareList({
+      ...params,
+      supplierID: this.data.supplierID
+    }).then(res => {
+      this.setData({
+        searchResult: res.data.map(item => {
+          item.buyCount = 1
+          item.checked = false
+          item.priceLabel = `￥${formatPrice(item.storePrice, false)}`
+          return item
+        })
+      })
+    })
+  },
+
+  onConfirm(e) {
+    const wareList = this.data.searchResult
+    app.globalData.orderInfo.wareList = wareList
+    navigateTo({
+      url: 'order',
+      navigateType: 'navigateBack'
     })
   },
 

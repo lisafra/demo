@@ -3,6 +3,7 @@
   "usingComponents": {
     "c-button": "/components/Button/Button",
     "Cell": "/components/Cell/Cell",
-    "Search": "/components/Search/Search"
+    "Search": "/components/Search/Search",
+    "GoodsItem": "/components/GoodsItem/GoodsItem"
   }
 }

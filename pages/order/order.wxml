@@ -18,53 +18,63 @@
 
     <!--选择驿站-->
     <Cell label="选择驿站" arrow>
-      <!--<text slot="value">{{storeList[storeIndex].name}}</text>-->
-      <picker slot="value" bindchange="bindPickerChange"
-              value="{{storeList[storeIndex].name}}"
-              data-type="storeIndex"
-              range="{{storeListPickerData}}">
-        <view class="weui-input">{{storeList[storeIndex].name}}</view>
-      </picker>
+      <text slot="value">{{storeList[storeIndex].name || '请选择'}}</text>
+      <!--<picker slot="value" bindchange="bindPickerChange"-->
+              <!--value="{{storeList[storeIndex].name}}"-->
+              <!--data-type="storeIndex"-->
+              <!--range="{{storeListPickerData}}">-->
+        <!--<view class="weui-input">{{storeList[storeIndex].name}}</view>-->
+      <!--</picker>-->
+    </Cell>
+
+    <Cell label="供应商" arrow>
+      <text slot="value" class="strong">{{supplierList[supplierIndex].name || '请选择'}}</text>
     </Cell>
 
     <!-- 选择商品 -->
-    <Cell label="选择商品" arrow bindtap="navigateTo" data-url="searchWares">
+    <Cell label="选择商品" arrow
+          bindtap="navigateTo"
+          data-url="searchWares"
+          data-params="{{searchWaresParam}}">
       <text slot="value">{{!wareList ? '请输入SKU编号' : wareList[wareIndex].skuID}}</text>
     </Cell>
 
     <!-- 商品购买区 -->
-    <Cell arrow="{{false}}">
-      <text slot="label" class="bold">自营驿站</text>
-    </Cell>
-    <Cell arrow="{{false}}" container>
-      <GoodsItem wx:for="{{wareList}}"
-                 wx:key="index"
-                 wx:for-item="item"
-                 line="{{index < wareList.length - 1}}"
-                 data="{{item}}">
+    <block wx:if="{{wareList}}">
+      <Cell arrow="{{false}}" >
+        <text slot="label" class="bold">自营驿站</text>
+      </Cell>
+      <Cell arrow="{{false}}" container>
+        <GoodsItem wx:for="{{wareList}}"
+                   wx:key="index"
+                   wx:for-item="item"
+                   line="{{index < wareList.length - 1}}"
+                   data="{{item}}">
 
+        </GoodsItem>
+      </Cell>
+    </block>
 
-      </GoodsItem>
-    </Cell>
-
-    <!-- 自营驿站 -->
-    <Cell label="供应商" arrow>
-      <text slot="value" class="strong">{{supplierList[supplierIndex].name}}</text>
-    </Cell>
 
     <!-- 支付方式 -->
     <Cell label="支付方式" arrow>
-      <text slot="value" class="strong">{{payTypeConfig[orderPayType]}}</text>
+      <!--<text slot="value" class="strong">{{payTypeConfig[orderPayType]}}</text>-->
+      <picker slot="value" bindchange="bindPickerChange"
+              value="{{storeList[storeIndex].name}}"
+              data-type="orderPayType"
+              range="{{payTypeConf}}">
+          <view class="strong">{{payTypeConf[orderPayType]}}</view>
+      </picker>
     </Cell>
 
     <!-- 价格展示区  -->
     <Cell line="{{false}}">
 
       <!-- 下单信息统计 -->
-      <View slot="value" class="cell-indent-right total-price" wx:if="{{totalPrice}}">
+      <view slot="value" class="cell-indent-right total-price" wx:if="{{totalPrice}}">
         共 {{totalCount}} 件，总价
-        <text class="theme-text">{{totalPrice}}</text>
-      </View>
+        <text class="theme-text">￥{{totalPrice}}</text>
+      </view>
 
       <!-- 支付提示 -->
       <text slot="value" class="cell-indent-right desc-text" wx:else>

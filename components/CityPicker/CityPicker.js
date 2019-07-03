@@ -1,5 +1,5 @@
-// components/Button/Button.js
-const citys = wx.getStorageSync('citys')
+
+import cityData from '../../data/citys'
 
 Component({
   /**
@@ -37,7 +37,8 @@ Component({
    */
   methods: {
     initCityData () {
-      citys.sort((a, b) => {
+      console.log('citys', citys)
+        let citys = cityData['districts'][0]['districts'].sort((a, b) => {
         if (a['adcode'] - 0 < b['adcode'] - 0) {
           return -1;
         }

@@ -3,7 +3,7 @@
 import { getAreaByLatAndLng } from '../../api/location'
 
 const app = getApp()
-const { globalData, navigateTo } = app
+const { navigateTo } = app
 
 Page({
 
@@ -48,12 +48,14 @@ Page({
     this.setData({
       addressInfo: Object.assign(this.data.addressInfo, e.detail)
     })
-
-    // console.log('选择的城市变了', e.detail, this.data)
   },
 
   onConfirm() {
-
+    app.globalData.orderInfo.addressInfo = this.data.addressInfo
+    navigateTo({
+      url: 'consigneeInfo',
+      navigateType: 'navigateBack'
+    })
   },
 
   /**

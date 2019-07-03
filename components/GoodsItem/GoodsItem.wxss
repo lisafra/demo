@@ -16,6 +16,7 @@
 }
 
 .product-info{
+  flex: 1;
   flex-direction: column;
 }
 

@@ -40,8 +40,8 @@ export const getStoreUser = ({name}) => {
  * 获取商品列表
  * @param supplierID 供应商ID
  * */
-export const getWareList = ({supplierID = 0}) => {
-  return http.get('ware/search', {supplierID})
+export const getWareList = (params) => {
+  return http.get('ware/search', params)
 }
 
 

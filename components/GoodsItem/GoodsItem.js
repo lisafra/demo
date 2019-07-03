@@ -7,6 +7,7 @@ Component({
     data: {
       type: Object
     },
+    disabled: Boolean,
     line: {
       type: Boolean,
       value: true

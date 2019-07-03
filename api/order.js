@@ -9,8 +9,8 @@ const http = new Request('man')
  * 获取商品列表
  * @param orderInfoVO 供应商ID
  * */
-export const order = ({orderInfoVO}) => {
-  return http.post('order/submit', {orderInfoVO})
+export const order = (params) => {
+  return http.post('order/submit', params)
 }
 
 

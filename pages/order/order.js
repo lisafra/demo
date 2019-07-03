@@ -2,10 +2,10 @@
 const app = getApp()
 const { globalData, navigateTo, decodeURL } = app
 
-import { formatPrice } from '../../utils/format.js'
 
-import {getSupplierList, getStoreList, getStoreUser, getWareList} from '../../api/wares'
+import {getSupplierList, getStoreUser} from '../../api/wares'
 import {order} from '../../api/order'
+import { formatPrice } from '../../utils/format.js'
 
 Page({
   /**
@@ -13,20 +13,18 @@ Page({
    */
   data: {
     consigneeInfo: null,
-    payTypeConfig: {
-      1: '现金支付',
-      2: '其它支付'
-    },
     storeListPickerData: null,
     storeList: [{
       name: '请选择'
     }],
-    storeIndex: 0,
+    searchWaresParam: {},
+    storeIndex: 1,
     supplierIndex: 0,
     supplierList: null,
     wareIndex: 0,
     wareList: null,
-    orderPayType: 1,
+    orderPayType: 0,
+    payTypeConf: ['现金支付', '其它'],
     skuInfoVOs: null,
     totalCount: 0,
     totalPrice: 0
@@ -38,12 +36,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
-    const {consigneeInfo} = decodeURL(options)
-    if (consigneeInfo) this.setData({consigneeInfo})
-
-    console.log('获取页面参数', this.data, consigneeInfo)
-
     getStoreUser({
       name: globalData.userInfo.name
     }).then(res => {
@@ -53,33 +45,26 @@ Page({
             storeListPickerData: storeList.map(item => item.name),
             storeList: this.data.storeList.concat(storeList)
           })
-          console.log(' 【展示驿站数据】', this.data)
       }
     })
 
     getSupplierList().then(res => {
       if (res.success) {
-        this.setData({supplierList: res.data})
-        getWareList({
-          supplierID: res.data[this.data.supplierIndex].id
-        }).then(res => {
-          this.setData({wareList: res.data.map(item => {
-            item.buyCount = 1
-            item.priceLabel = `￥${item.storePrice}`
-            return item
-          })})
-          this.computeOrderPriceInfo()
+        this.setData({
+          supplierList: res.data,
+          searchWaresParam: {
+            supplierID: res.data[this.data.supplierIndex].id
+          }
         })
-        console.log(' 【展示供应商数据】', this.data)
       }
     })
   },
 
-  computeOrderPriceInfo () {
+  computeOrderPriceInfo (wareList) {
     let totalPrice = 0
     let totalCount = 0
     let skuInfoVOs = []
-    this.data.wareList.forEach(item => {
+    wareList.forEach(item => {
       totalCount += item.buyCount
       totalPrice += (item.storePrice * item.buyCount)
       skuInfoVOs.push({
@@ -88,7 +73,10 @@ Page({
       })
     })
 
-    this.setData({totalCount, totalPrice, skuInfoVOs})
+    this.setData({
+      totalCount,
+      totalPrice: formatPrice(totalPrice, false),
+      skuInfoVOs})
   },
 
   /**
@@ -101,9 +89,12 @@ Page({
   bindPickerChange(e) {
     console.log('【pick change】', e)
     const {value} = e.detail
-    this.setData({
-      storeIndex: value - 0 + 1
-    })
+    const {type} = e.target.dataset
+    let changeObj = {}
+    changeObj[type] = value - 0
+
+    this.setData(changeObj)
+    // console.log(changeObj, this.data)
   },
 
   // 下单前校验
@@ -139,21 +130,22 @@ Page({
     if (!this.orderVerify(storeId, 'storeId')) return
     if (!this.orderVerify(supplierId, 'supplier')) return
 
+    const {provinceName, cityName, countyName, userName, telNumber, detailInfo} = consigneeInfo
+
     const orderInfoVO = {
-      orderPayType,
+      orderPayType: orderPayType + 1,
       storeId,
       supplier: supplierId,
       skuInfoVOs,
-      buyerName: consigneeInfo.userName,
-      buyerMobile: consigneeInfo.telNumber,
-      buyerProvince: consigneeInfo.provinceName,
-      buyerCity: consigneeInfo.cityName,
-      buyerAddress: consigneeInfo.countyName + consigneeInfo.detailInfo,
+      buyerName: userName,
+      buyerMobile: telNumber,
+      areaCode: `${provinceName},${cityName},${countyName}`,
+      buyerAddress: detailInfo
     }
 
     console.log('下单啦', orderInfoVO, consigneeInfo)
 
-    order({ orderInfoVO }).then(res => {
+    order(orderInfoVO).then(res => {
       if (res.success) {
         this.orderSuccess()
       }
@@ -170,6 +162,7 @@ Page({
       confirmColor: '#EF260E',
       success (res) {
         if (res.confirm) {
+          app.globalData.orderInfo = {}
           wx.navigateTo({url: globalData.path.index})
         }
       }
@@ -180,7 +173,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const {consigneeInfo, wareList} = app.globalData.orderInfo
 
+    this.setData({
+      ...app.globalData.orderInfo
+    })
+    this.setDataByKey(consigneeInfo)
+    this.setDataByKey(wareList)
+
+    if(wareList) this.computeOrderPriceInfo(wareList)
+
+    // console.log('获取页面参数', this.data, consigneeInfo, app.globalData.orderInfo)
+  },
+
+  setDataByKey(key = {}) {
+    this.setData(key)
   },
 
   /**
@@ -194,7 +201,8 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    console.log('触发这个hooks了吗， onUnload')
+    app.globalData.orderInfo = {}
   },
 
   /**

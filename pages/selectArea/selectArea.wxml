@@ -13,9 +13,6 @@
   </view>
 
   <!-- 页面按钮 -->
-  <c-button text="确定" bindtap="navigateTo"
-            data-navigateType="navigateBack"
-            data-url="consigneeInfo"
-            data-params="{{addressInfo}}"/>
+  <c-button text="确定" bindtap="onConfirm" />
 
 </view>

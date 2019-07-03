@@ -39,7 +39,7 @@ class Request {
             wx.setStorageSync('cookieKey', setCookie)
           }
 
-          console.log('【来自接口的消息】', res)
+          // console.log('【来自接口的消息】', res)
 
           // 接口出错回到首页
           if (!res.data.success && showError) {
