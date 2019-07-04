@@ -3,21 +3,8 @@
   <component name="ChangeListManager">
     <list id="2fe0b004-d6bd-4ab2-a543-90e08dd176ed" name="Default" comment="" />
     <list default="true" id="32cc8600-4b40-4e60-b9c6-de1ff412a9da" name="Default Changelist" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/user@2x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/login/login.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/login/login.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/login/login.wxml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/pages/login/login.wxss" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/images/user.png" afterPath="$PROJECT_DIR$/images/user.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/api/account.js" afterPath="$PROJECT_DIR$/api/account.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.wxss" afterPath="$PROJECT_DIR$/app.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Button/Button.js" afterPath="$PROJECT_DIR$/components/Button/Button.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.js" afterPath="$PROJECT_DIR$/pages/index/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.json" afterPath="$PROJECT_DIR$/pages/index/index.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/request.js" afterPath="$PROJECT_DIR$/utils/request.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Login/Login.wxss" afterPath="$PROJECT_DIR$/components/Login/Login.wxss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -96,11 +83,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.wxss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="index.wxss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                <state relative-caret-position="312">
+                  <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
                   <folding />
                 </state>
               </provider>
@@ -146,11 +133,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Login.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/Login/Login.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+                <state relative-caret-position="287">
+                  <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -215,8 +202,8 @@
           <file leaf-file-name="Login.wxss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/components/Login/Login.wxss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="123">
-                  <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+                <state relative-caret-position="227">
+                  <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
                   <folding />
                 </state>
               </provider>
@@ -351,10 +338,10 @@
         <option value="$PROJECT_DIR$/templates/login/login.wxss" />
         <option value="$PROJECT_DIR$/templates/login/login.js" />
         <option value="$PROJECT_DIR$/components/Login/Login.json" />
-        <option value="$PROJECT_DIR$/components/Login/Login.wxss" />
         <option value="$PROJECT_DIR$/pages/index/index.js" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
         <option value="$PROJECT_DIR$/components/Login/Login.js" />
+        <option value="$PROJECT_DIR$/components/Login/Login.wxss" />
       </list>
     </option>
   </component>
@@ -651,12 +638,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561794083967</updated>
       <workItem from="1561794088429" duration="1798000" />
-      <workItem from="1561797323706" duration="106713000" />
+      <workItem from="1561797323706" duration="107054000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65066000" />
+    <option name="totallyTimeSpent" value="65407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="22" y="29" width="1817" height="829" extended-state="0" />
@@ -1052,26 +1039,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/login/login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1132,18 +1103,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Login/Login.wxss">
+    <entry file="file://$PROJECT_DIR$/components/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="26" column="26" lean-forward="true" selection-start-line="26" selection-start-column="26" selection-end-line="26" selection-end-column="26" />
+        <state relative-caret-position="287">
+          <caret line="64" column="24" lean-forward="true" selection-start-line="64" selection-start-column="24" selection-end-line="64" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Login/Login.js">
+    <entry file="file://$PROJECT_DIR$/pages/index/index.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="46" column="20" lean-forward="true" selection-start-line="46" selection-start-column="20" selection-end-line="46" selection-end-column="20" />
+        <state relative-caret-position="182">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="6" lean-forward="true" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Login/Login.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="10" column="10" lean-forward="false" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
           <folding />
         </state>
       </provider>

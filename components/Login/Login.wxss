@@ -5,6 +5,17 @@
   align-items: center;
 }
 
+.circle-gray-bg{
+  position: absolute;
+  z-index: -1;
+  left: -40vw;
+  top: 290rpx;
+  width: 180vw;
+  height: 200vw;
+  background: #EFD9B9;
+  border-radius: 50%;
+}
+
 .page-logo{
   width: 400rpx;
   height: 96rpx;
