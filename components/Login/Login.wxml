@@ -5,6 +5,7 @@
   <view class="page-section">
     <Cell label="用户名">
       <input slot="value"
+             value="{{account}}"
              bindinput="onInput"
              data-type="account"
              placeholder="请输入用户名"
@@ -15,6 +16,7 @@
       <input slot="value"
              type="password"
              data-type="password"
+             value="{{password}}"
              bindinput="onInput"
              placeholder="请输入密码"/>
     </Cell>
