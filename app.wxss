@@ -47,6 +47,14 @@ input {
   margin-bottom: 20rpx;
 }
 
+.theme-button{
+  width: 490rpx;
+  height: 80rpx;
+  margin-top: 26rpx;
+  border-radius: 80rpx;
+  box-shadow: 0 5rpx 10rpx 0 rgba(250,145,32,0.42);
+}
+
 .no-padding{
   padding: 0 30rpx;
 }

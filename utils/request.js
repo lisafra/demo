@@ -2,7 +2,7 @@
  * Created by Yulia on 2019/6/29.
  */
 const app = getApp()
-const { env, domain } = app.globalData
+const { env, domain, path } = app.globalData
 
 class Request {
   constructor (domainType) {
@@ -42,15 +42,13 @@ class Request {
           // console.log('【来自接口的消息】', res)
 
           // 接口出错回到首页
-          if (!res.data.success && showError) {
+          if (!res.data.success && res.data.msg && showError) {
             wx.showModal({
               content: res.data.msg,
               showCancel: false,
               confirmColor: '#EF260E',
               success (res) {
-                if (res.confirm) {
-                  wx.navigateTo({url: globalData.path.index})
-                }
+                reject(res)
               }
             })
           }

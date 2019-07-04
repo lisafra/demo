@@ -1,3 +1,7 @@
 {
-  "backgroundColor": "#efffff"
+  "backgroundColor": "#efffff",
+  "usingComponents": {
+    "Login": "/components/Login/Login"
+  }
+
 }

@@ -1,34 +1,29 @@
 <!--index.wxml-->
-<view class="page-container">
-  <!--<view class="userinfo">-->
-    <!--<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>-->
-    <!--<block wx:else>-->
-      <!---->
-      <!--<text class="userinfo-nickname">{{userInfo.nickName}}</text>-->
-    <!--</block>-->
-  <!--</view>-->
-  <!--<view class="usermotto">-->
-    <!--<text class="user-motto">{{motto}}</text>-->
-  <!--</view>-->
-  <view class="circle-gray-bg"></view>
-  <view class="menu display-row">
-    <view class="page-section menu-item display-row"
-          bindtap="navigateTo"
-          data-url="{{item.linkTo}}"
-          wx:for="{{pageText.nav}}"
-          wx:key="index"
-          wx:for-item="item">
 
-      <view class="icon-wrap">
-        <image class="icon" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+<view wx:if="{{!loading}}">
+
+  <Login wx:if="{{!isLogin}}" bindsuccess="loginSuccess" />
+
+  <view class="page-container" wx:else>
+    <view class="circle-gray-bg"></view>
+    <view class="menu display-row">
+      <view class="page-section menu-item display-row"
+            bindtap="navigateTo"
+            data-url="{{item.linkTo}}"
+            wx:for="{{pageText.nav}}"
+            wx:key="index"
+            wx:for-item="item">
+
+        <view class="icon-wrap">
+          <image class="icon" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+        </view>
+
+        <view class="menu-content display-column">
+          <text class="page-title">{{item.title}}</text>
+          <text class="page-desc-text">{{item.desc}}</text>
+        </view>
+
       </view>
-
-      <view class="menu-content display-column">
-        <text class="page-title">{{item.title}}</text>
-        <text class="page-desc-text">{{item.desc}}</text>
-      </view>
-
     </view>
   </view>
-
 </view>

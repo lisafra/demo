@@ -23,7 +23,7 @@ export const login = (params = {}) => {
  * 检测是否登录
  * */
 export const isLogin = () => {
-  return http.get('islogin')
+  return http.get('islogin', {})
 }
 
 

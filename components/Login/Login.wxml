@@ -1,0 +1,28 @@
+<!--components/Login/Login.wxml-->
+<view class="page-container">
+  <view class="circle-gray-bg"></view>
+  <image class="page-logo" src="/images/logo.png"></image>
+  <view class="page-section">
+    <Cell label="用户名">
+      <input slot="value"
+             bindinput="onInput"
+             data-type="account"
+             placeholder="请输入用户名"
+      />
+    </Cell>
+
+    <Cell label="密码">
+      <input slot="value"
+             type="password"
+             data-type="password"
+             bindinput="onInput"
+             placeholder="请输入密码"/>
+    </Cell>
+
+    <view class="button-wrap">
+      <button class="theme-button" type="primary" bindtap="onLogin">登录</button>
+    </view>
+
+  </view>
+
+</view>

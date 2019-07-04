@@ -5,6 +5,8 @@ const { globalData, navigateTo } = app
 
 Page({
   data: {
+    loading: true,
+    isLogin: false,
     pageText: {
       nav: [
         {
@@ -26,23 +28,18 @@ Page({
   navigateTo,
 
   onLoad: function () {
-
-    getCaptcha().then(res => {
-
+    isLogin().then(res => {
+      console.log('是否登录成功', res)
+      this.setData({isLogin: res.success, loading: false})
+    }).catch(error => {
+      this.setData({isLogin: false, loading: false})
     })
 
-    login({
-      account: 'ylk',
-      password: 123456
-    }).then(res => {
-      console.log('登录成功了吗', res)
-      if (res.data) {
-        app.globalData.userInfo.name = res.data
-      }
-      console.log(getApp())
-      isLogin().then(res => {
-        console.log('是否登录成功', res)
-      })
-    })
+    getCaptcha().then(res => {})
+  },
+
+  loginSuccess() {
+    console.log('【登录成功了】')
+    this.setData({isLogin: true})
   }
 })

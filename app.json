@@ -5,8 +5,7 @@
     "pages/searchWares/searchWares",
     "pages/order/order",
     "pages/consigneeInfo/consigneeInfo",
-    "pages/selectArea/selectArea",
-    "pages/login/login"
+    "pages/selectArea/selectArea"
   ],
   "networkTimeout": {
     "request": 10000
