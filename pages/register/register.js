@@ -36,7 +36,7 @@ Page({
 
   bindPickerChange(e) {
     const {value} = e.detail
-    this.setData({gender: this.data.genderValue[value - 0]})
+    this.setData({gender: this.data.genderValue[value - 1]})
   },
 
   onRegister () {
