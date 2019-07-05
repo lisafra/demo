@@ -1,18 +1,70 @@
 // pages/register/register.js
-Page({
+import { addMember } from '../../api/user'
+import {formVerify} from '../../utils/util'
+const app = getApp()
+const { navigateTo } = app
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-  
+    address: '',
+    age: '',
+    bindPhone: '',
+    gender: 0,
+    name: '',
+    storeID: '',
+    zhuCanCard: '',
+    genderList: ['男', '女', '未知'],
+    genderValue: [1, 2, 3],
+    loading: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+
+  },
+
+  onInput(e) {
+    const data = {}
+    data[e.currentTarget.dataset.type] = e.detail.value
+    this.setData(data)
+  },
+
+  bindPickerChange(e) {
+    const {value} = e.detail
+    this.setData({gender: this.data.genderValue[value - 0]})
+  },
+
+  onRegister () {
+    const {name, bindPhone, age, gender, loading} = this.data
+    if (loading) return
+
+    if (!formVerify(name, 'name')) return
+    if (!formVerify(bindPhone, 'phone')) return
+    if (!formVerify(age, 'age')) return
+
+    this.setData({loading: true})
+
+    addMember({name, bindPhone, age, gender})
+      .then(res => {
+        if (res.success) {
+          wx.showToast({
+            title: '注册成功！'
+          })
+          navigateTo({
+            url: 'index',
+            navigateType: 'redirectTo'
+          })
+        } else {
+          this.setData({loading: false})
+        }
+      }).catch(error => {
+      this.setData({loading: false})
+    })
   },
 
   /**

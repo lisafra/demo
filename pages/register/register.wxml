@@ -5,26 +5,46 @@
   <view class="page-section consignee-info-fill">
 
     <Cell label="姓名">
-      <input slot="value" placeholder="请输入"/>
+      <input slot="value"
+             value="{{name}}"
+             bindinput="onInput"
+             data-type="name"
+             placeholder="请输入"/>
     </Cell>
 
     <Cell label="手机号">
-      <input slot="value" class="strong" type="number" value="18210200597"/>
+      <input slot="value" class="strong" type="number"
+             value="{{bindPhone}}"
+             bindinput="onInput"
+             data-type="bindPhone"
+             maxlength="11"
+             placeholder="请输入"
+      />
     </Cell>
 
     <Cell label="年龄">
-      <input slot="value" class="strong" type="number" value="33"/>
+      <input slot="value" class="strong" type="number"
+             maxlength="3"
+             value="{{age}}"
+             data-type="age"
+             bindinput="onInput"
+             placeholder="请输入"
+      />
     </Cell>
 
     <Cell label="性别" arrow line="{{false}}" >
-      <text slot="value" class="strong">男</text>
+      <picker slot="value" bindchange="bindPickerChange"
+              data-type="gender"
+              range="{{genderList}}">
+        <view class="strong">{{genderList[gender]}}</view>
+      </picker>
     </Cell>
 
   </view>
 
 
   <!-- 页面按钮 -->
-  <c-button text="注册" />
+  <c-button text="注册" bindtap="onRegister"/>
 
 </view>
 

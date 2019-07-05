@@ -16,5 +16,6 @@
     "navigationBarTitleText": "诚和敬",
     "backgroundColor": "#F9F2E8",
     "navigationBarTextStyle": "white"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

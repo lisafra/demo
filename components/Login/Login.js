@@ -52,9 +52,11 @@ Component({
     onLogin () {
       const {account, password, loading} = this.data
       if (loading) return
-      this.setData({loading: true})
+
       if (!this.formVerify(account, 'account')) return
       if (!this.formVerify(password, 'password')) return
+
+      this.setData({loading: true})
 
       login({account, password}).then(res => {
         if (res.success) {

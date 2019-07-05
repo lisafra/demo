@@ -15,7 +15,7 @@
             wx:for-item="item">
 
         <view class="icon-wrap">
-          <image class="icon" bindtap="bindViewTap" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+          <image class="icon icon-{{item.icon}}" src="/images/{{item.icon}}.png" mode="cover"></image>
         </view>
 
         <view class="menu-content display-column">
