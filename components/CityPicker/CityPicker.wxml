@@ -1,14 +1,25 @@
 <!--components/Button/Button.wxml-->
 <view class='city-picker'>
-  <picker-view indicator-style="height: 50px;" style="width: 100%; height: 300px;" value="{{value}}" bindchange="bindChange">
+  <view class="picker-title">
+    <text>省份</text>
+    <text>城市</text>
+    <text>区县</text>
+  </view>
+  <view class="mask"></view>
+  <picker-view class="pick-view"
+               indicator-class="picked-item"
+               value="{{value}}"
+               bindchange="bindChange">
     <picker-view-column>
-      <view wx:for="{{provinces}}" wx:key="item.name" style="line-height: 50px">{{item.name}}</view>
+      <view class="pick-item"
+        wx:for="{{provinces}}"
+            wx:key="item.name">{{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{citys}}" wx:key="item.name" style="line-height: 50px">{{item.name}}</view>
+      <view class="pick-item" wx:for="{{citys}}" wx:key="item.name">{{item.name}}</view>
     </picker-view-column>
     <picker-view-column>
-      <view wx:for="{{districts}}" wx:key="item.name" style="line-height: 50px">{{item.name}}</view>
+      <view class="pick-item" wx:for="{{districts}}" wx:key="item.name">{{item.name}}</view>
     </picker-view-column>
   </picker-view>
 </view>

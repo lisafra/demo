@@ -3,17 +3,11 @@
   <component name="ChangeListManager">
     <list id="2fe0b004-d6bd-4ab2-a543-90e08dd176ed" name="Default" comment="" />
     <list default="true" id="32cc8600-4b40-4e60-b9c6-de1ff412a9da" name="Default Changelist" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/submit@3x.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/images/user@3x.png" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/images/submit@2x.png" afterPath="$PROJECT_DIR$/images/submit.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.json" afterPath="$PROJECT_DIR$/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Login/Login.js" afterPath="$PROJECT_DIR$/components/Login/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/CityPicker/CityPicker.wxml" afterPath="$PROJECT_DIR$/components/CityPicker/CityPicker.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/CityPicker/CityPicker.wxss" afterPath="$PROJECT_DIR$/components/CityPicker/CityPicker.wxss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.wxss" afterPath="$PROJECT_DIR$/pages/index/index.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/register/register.js" afterPath="$PROJECT_DIR$/pages/register/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/register/register.wxml" afterPath="$PROJECT_DIR$/pages/register/register.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/util.js" afterPath="$PROJECT_DIR$/utils/util.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/selectArea/selectArea.wxss" afterPath="$PROJECT_DIR$/pages/selectArea/selectArea.wxss" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -69,7 +63,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3897059">
+    <splitter split-orientation="horizontal" split-proportion="0.45034248">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
@@ -82,11 +76,31 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.wxml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.wxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="182">
-                  <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+                <state relative-caret-position="130">
+                  <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CityPicker.wxss" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="468">
+                  <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="selectArea.wxss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.wxss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="78">
+                  <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
                   <folding />
                 </state>
               </provider>
@@ -97,26 +111,6 @@
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="234">
                   <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/order/order.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="132">
-                  <caret line="86" column="4" lean-forward="true" selection-start-line="86" selection-start-column="4" selection-end-line="86" selection-end-column="4" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="order.wxml" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="337">
-                  <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="66" selection-end-column="15" />
                   <folding />
                 </state>
               </provider>
@@ -200,11 +194,21 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.wxss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.wxss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="372">
-                  <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+                <state relative-caret-position="184">
+                  <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="CityPicker.wxml" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxml">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="260">
+                  <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
                   <folding />
                 </state>
               </provider>
@@ -252,31 +256,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Button.wxss" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/components/Button/Button.wxss">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="149">
-                  <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="selectArea.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="55" column="27" lean-forward="false" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="27" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="selectArea.wxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.wxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="390">
-                  <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
+                <state relative-caret-position="137">
+                  <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -322,9 +306,9 @@
       <find>globalData</find>
       <find>consol</find>
       <find>login</find>
-      <find>navigateTo</find>
       <find>triggerEvent</find>
       <find>bind</find>
+      <find>navigateTo</find>
       <find>options</find>
     </findStrings>
   </component>
@@ -334,9 +318,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/api/location.js" />
-        <option value="$PROJECT_DIR$/components/CityPicker/CityPicker.wxml" />
-        <option value="$PROJECT_DIR$/components/Cell/Cell.wxml" />
         <option value="$PROJECT_DIR$/components/Cell/Cell.wxss" />
         <option value="$PROJECT_DIR$/components/Adress/Adress.wxml" />
         <option value="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.wxml" />
@@ -385,6 +366,9 @@
         <option value="$PROJECT_DIR$/pages/register/register.js" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
         <option value="$PROJECT_DIR$/pages/index/index.wxss" />
+        <option value="$PROJECT_DIR$/pages/selectArea/selectArea.wxss" />
+        <option value="$PROJECT_DIR$/components/CityPicker/CityPicker.wxml" />
+        <option value="$PROJECT_DIR$/components/CityPicker/CityPicker.wxss" />
       </list>
     </option>
   </component>
@@ -401,9 +385,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="62" />
+    <option name="x" value="-50" />
     <option name="y" value="23" />
-    <option name="width" value="1374" />
+    <option name="width" value="1490" />
     <option name="height" value="829" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -461,6 +445,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="utils" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgentOrderForCHJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgentOrderForCHJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="selectArea" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -575,6 +577,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Login" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgentOrderForCHJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgentOrderForCHJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="GoodsItem" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgentOrderForCHJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AgentOrderForCHJ" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CityPicker" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -709,18 +747,18 @@
       <option name="presentableId" value="Default" />
       <updated>1561794083967</updated>
       <workItem from="1561794088429" duration="1798000" />
-      <workItem from="1561797323706" duration="109964000" />
+      <workItem from="1561797323706" duration="111869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68317000" />
+    <option name="totallyTimeSpent" value="70222000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="62" y="23" width="1374" height="829" extended-state="0" />
+    <frame x="-50" y="23" width="1490" height="829" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22115384" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20367847" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -788,32 +826,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/components/Search/Search.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/location.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="31" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="31" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="13" lean-forward="true" selection-start-line="0" selection-start-column="13" selection-end-line="0" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -970,14 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/Button/Button.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Button/Button.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -1038,14 +1042,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="38" selection-end-line="15" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1181,6 +1177,46 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="14" column="16" lean-forward="false" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="4" column="59" lean-forward="true" selection-start-line="4" selection-start-column="59" selection-end-line="4" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/selectArea/selectArea.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="8" column="0" lean-forward="true" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/Button/Button.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="16" column="32" lean-forward="false" selection-start-line="16" selection-start-column="32" selection-end-line="16" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/index/index.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
@@ -1189,18 +1225,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxml">
+    <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+        <state relative-caret-position="260">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/index/index.wxss">
+    <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="372">
-          <caret line="37" column="12" lean-forward="false" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+        <state relative-caret-position="468">
+          <caret line="30" column="21" lean-forward="true" selection-start-line="30" selection-start-column="21" selection-end-line="30" selection-end-column="21" />
           <folding />
         </state>
       </provider>
