@@ -4,9 +4,12 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    vaule: {
+    value: {
       type: Number,
-      value: 1
+      value: 1,
+      observer: function (newVal) {
+        this.setData({num: newVal})
+      }
     }
   },
 
@@ -14,24 +17,16 @@ Component({
    * 组件的初始数据
    */
   data: {
-    // input默认是1
-    num: 1,
     // 使用data数据对象设置样式名
-    minusStatus: 'disabled'
   },
 
-  lifetimes: {
-    attached () {
-      this.setData({num: value})
-    }
+  attached () {
+    console.log('初始化buyCount数据', this.data)
+    this.setData({
+      num: this.data.value,
+      minusStatus: this.data.value > 1 ? ''  : 'disabled'
+    })
   },
-
-  observers: {
-      'value': function(value) {
-        this.setData({num: value})
-      }
-  },
-
 
   /**
    * 组件的方法列表

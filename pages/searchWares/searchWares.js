@@ -13,8 +13,49 @@ Page({
    */
   data: {
     supplierID: '',
-    searchResult: null,
-    searchHistoryRecord: null
+    searchHistoryRecord: null,
+    searchResult: null
+    // searchResult: [{
+    //   groupPrice: 300.3,
+    //   groupStock: "200.01",
+    //   mainImageUrl: "//static.chj-inn.com/ware/ware.png",
+    //   skuID: 6501,
+    //   storeID: 2501,
+    //   storePrice: 300.3,
+    //   storeStock: "200.00",
+    //   supplierID: 1501,
+    //   wareBusinessType: 1,
+    //   wareIntroduction: "详细描述333",
+    //   wareName: "端午节嘉兴粽子咸鸭蛋酱鸭大礼包 端午十粽十味双层竹篮礼篮1968g",
+    //   wareOrigin: "地产",
+    //   wareProductType: 1,
+    //   wareSlogan: "广告语",
+    //   wareTemperatureDescription: 2,
+    //   wareTypeOfMeasurement: 1,
+    //   wareUnitOfMeasurement: 2,
+    //   checked: false
+    // },
+    //   {
+    //     groupPrice: 300.3,
+    //     groupStock: "200.01",
+    //     mainImageUrl: "//static.chj-inn.com/ware/ware.png",
+    //     skuID: 6501,
+    //     storeID: 2501,
+    //     storePrice: 300.3,
+    //     storeStock: "200.00",
+    //     supplierID: 1501,
+    //     wareBusinessType: 1,
+    //     wareIntroduction: "详细描述333",
+    //     wareName: "端午节嘉兴粽子咸鸭蛋酱鸭大礼包 端午十粽十味双层竹篮礼篮1968g",
+    //     wareOrigin: "地产",
+    //     wareProductType: 1,
+    //     wareSlogan: "广告语",
+    //     wareTemperatureDescription: 2,
+    //     wareTypeOfMeasurement: 1,
+    //     wareUnitOfMeasurement: 2,
+    //     checked: false,
+    //   }
+    // ]
   },
 
   /**
@@ -52,9 +93,27 @@ Page({
     })
   },
 
+  selectItem(e) {
+    console.log(e)
+    const {index} = e.currentTarget.dataset
+    let {searchResult} = this.data
+    searchResult[index].checked = !searchResult[index].checked
+    this.setData({
+      searchResult
+    })
+  },
+
   onConfirm(e) {
     const wareList = this.data.searchResult
-    app.globalData.orderInfo.wareList = wareList
+    const selectWare = wareList.filter(item => item.checked === true)
+    app.globalData.orderInfo.wareList = selectWare
+    if (!selectWare.length) {
+      wx.showToast({
+        title: '请选择商品'
+      })
+      return
+    }
+    console.log(selectWare, wareList)
     navigateTo({
       url: 'order',
       navigateType: 'navigateBack'

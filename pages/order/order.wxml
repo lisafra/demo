@@ -36,23 +36,28 @@
           bindtap="navigateTo"
           data-url="searchWares"
           data-params="{{searchWaresParam}}">
-      <text slot="value">{{!wareList ? '请输入SKU编号' : wareList[wareIndex].skuID}}</text>
+      <text slot="value">{{!wareList.length ? '请输入SKU编号' : wareList[wareIndex].skuID}}</text>
     </Cell>
 
     <!-- 商品购买区 -->
-    <block wx:if="{{wareList}}">
+    <block wx:if="{{wareList.length}}">
       <Cell arrow="{{false}}" >
-        <text slot="label" class="bold">自营驿站</text>
+        <text slot="label" class="bold">{{STORE_TYPE[storeList[storeIndex].storeType]}}</text>
       </Cell>
-      <Cell arrow="{{false}}" container>
+
+      <view class="ware-list line">
         <GoodsItem wx:for="{{wareList}}"
                    wx:key="index"
                    wx:for-item="item"
-                   line="{{index < wareList.length - 1}}"
-                   data="{{item}}">
+                   index="{{index}}"
+                   data="{{item}}"
+                   data-index="{{index}}"
+                   bindonDelete="deleteWare"
+                   bindchangeCount="changeWareCount"
+                   line="{{index < wareList.length - 1}}">
 
         </GoodsItem>
-      </Cell>
+      </view>
     </block>
 
 
@@ -71,15 +76,13 @@
     <Cell line="{{false}}">
 
       <!-- 下单信息统计 -->
-      <view slot="value" class="cell-indent-right total-price" wx:if="{{totalPrice}}">
+      <view slot="value" class="cell-indent-right total-price" wx:if="{{totalCount}}">
         共 {{totalCount}} 件，总价
         <text class="theme-text">￥{{totalPrice}}</text>
       </view>
 
       <!-- 支付提示 -->
-      <text slot="value" class="cell-indent-right desc-text" wx:else>
-        请根据实际情况选择支付方式
-      </text>
+      <text slot="value" class="cell-indent-right desc-text" wx:else>请根据实际情况选择支付方式</text>
 
     </Cell>
 

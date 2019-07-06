@@ -54,7 +54,7 @@ Page({
     app.globalData.orderInfo.addressInfo = this.data.addressInfo
     navigateTo({
       url: 'consigneeInfo',
-      navigateType: 'navigateBack'
+      navigateType: 'redirectTo'
     })
   },
 

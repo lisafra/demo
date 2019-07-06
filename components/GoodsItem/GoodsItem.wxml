@@ -2,9 +2,7 @@
 <view class="c-product-item" wx:if="{{data}}">
 
   <!-- 商品图片 -->
-  <view class="product-img">
-    <image src="{{data.images}}"></image>
-  </view>
+  <image class="product-img" src="{{data.mainImageUrl}}"></image>
 
   <!-- 商品详细描述信息 -->
   <view class="product-info space-between {{line ? 'line' : ''}}">
@@ -19,9 +17,10 @@
 
     </view>
 
-    <view class="space-between">
+    <view class="space-between bottom-info">
       <text class="product-price">{{data.priceLabel}}</text>
       <BuyCount wx:if="{{!disabled}}"
+                value="{{data.buyCount}}"
                 bindchange="changeBuyCount"/>
     </view>
 

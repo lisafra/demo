@@ -3,9 +3,15 @@
   padding: 0 20rpx 30rpx;
   min-height: 476rpx;
 }
-
+.search-result-title{
+  margin-bottom: 20rpx;
+}
 .result-item{
-  padding: 30rpx;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 0 20rpx;
+  height: 164rpx;
 }
 
 .result-item.checked{
@@ -18,4 +24,9 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.icon-check{
+  width: 32rpx;
+  height: 32rpx;
 }

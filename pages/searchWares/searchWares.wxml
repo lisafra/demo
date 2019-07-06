@@ -7,16 +7,23 @@
   <!-- 商品列表 -->
   <view class="page-section search-result" wx:if="{{searchResult}}">
 
-    <Cell arrow="{{false}}">
-      <text slot="label" class="bold search-result-title"> 搜索结果</text>
-    </Cell>
+    <view class="search-result-title">
+      <Cell arrow="{{false}}" className="search-result-title">
+        <text slot="label" class="bold"> 搜索结果</text>
+      </Cell>
+
+    </view>
 
     <view class="result-item {{item.checked ? 'checked' : ''}}"
-      wx:for="{{searchResult}}"
-      wx:key="index"
-      wx:for-item="item">
-      <!--<image class="icon-check"-->
-             <!--src="asserts/bin.png"></image>-->
+          wx:for="{{searchResult}}"
+          wx:key="index"
+          wx:for-item="item"
+          data-index="{{index}}"
+          bindtap="selectItem">
+      <view>
+        <image class="icon-check"
+               src="/images/{{ item.checked ? 'selected' : 'select'}}.png"></image>
+      </view>
 
       <GoodsItem line="{{false}}" disabled
                  data="{{item}}" />

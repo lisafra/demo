@@ -1,10 +1,10 @@
 // components/Cell/Cell.js
 Component({
   options: {
-    multipleSlots: true,
-    styleIsolation: 'apply-shared'
+    multipleSlots: true
   },
-  externalClasses: ['custom-class'],
+
+  externalClasses: ['className'],
   /**
    * 组件的属性列表
    */

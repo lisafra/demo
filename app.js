@@ -2,33 +2,7 @@
 
 
 App({
-  onLaunch: function () {
-
-    // 获取
-
-    // 获取用户信息
-    // wx.getSetting({
-    //   success: res => {
-    //     if (res.authSetting['scope.userInfo']) {
-    //       // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-    //       wx.getUserInfo({
-    //         success: res => {
-    //           // 可以将 res 发送给后台解码出 unionId
-    //           this.globalData.userInfo = res.userInfo
-    //
-    //           // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-    //           // 所以此处加入 callback 以防止这种情况
-    //           if (this.userInfoReadyCallback) {
-    //             this.userInfoReadyCallback(res)
-    //           }
-    //         }
-    //       })
-    //     }
-    //   }
-    // })
-
-
-  },
+  onLaunch: function () {},
 
   navigateTo (e){
     if (!e) return
@@ -85,7 +59,52 @@ App({
     env: 'pre',
     orderInfo: {
       consigneeInfo: null,
-      wareList: null
+      wareList: []
+      // wareList: [{
+      //   groupPrice: 300.3,
+      //   groupStock: "200.01",
+      //   mainImageUrl: "//static.chj-inn.com/ware/ware.png",
+      //   skuID: 6501,
+      //   storeID: 2501,
+      //   storePrice: 300.3,
+      //   storeStock: "200.00",
+      //   supplierID: 1501,
+      //   wareBusinessType: 1,
+      //   wareIntroduction: "详细描述333",
+      //   wareName: "端午节嘉兴粽子咸鸭蛋酱鸭大礼包 端午十粽十味双层竹篮礼篮1968g",
+      //   wareOrigin: "地产",
+      //   wareProductType: 1,
+      //   wareSlogan: "广告语",
+      //   wareTemperatureDescription: 2,
+      //   wareTypeOfMeasurement: 1,
+      //   wareUnitOfMeasurement: 2,
+      //   priceLabel: 10.00,
+      //   checked: true,
+      //   buyCount: 2
+      // },
+      //   {
+      //     groupPrice: 300.3,
+      //     groupStock: "200.01",
+      //     mainImageUrl: "//static.chj-inn.com/ware/ware.png",
+      //     skuID: 6501,
+      //     storeID: 2501,
+      //     storePrice: 300.3,
+      //     storeStock: "200.00",
+      //     supplierID: 1501,
+      //     wareBusinessType: 1,
+      //     wareIntroduction: "详细描述333",
+      //     wareName: "端午节嘉兴粽子",
+      //     wareOrigin: "地产",
+      //     wareProductType: 1,
+      //     wareSlogan: "广告语",
+      //     wareTemperatureDescription: 2,
+      //     wareTypeOfMeasurement: 1,
+      //     wareUnitOfMeasurement: 2,
+      //     priceLabel: 12.00,
+      //     checked: true,
+      //     buyCount: 1
+      //   }
+      // ]
     },
     path: {
       index: '/pages/index/index',

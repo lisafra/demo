@@ -13,5 +13,10 @@
 
 .total-price{
   font-size: 32rpx;
-  padding-bottom: 16rpx;
+  padding: 30rpx 0 40rpx;
+}
+
+.ware-list{
+  padding-bottom: 30rpx;
+  margin-top: 10rpx;
 }

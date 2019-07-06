@@ -1,17 +1,20 @@
 <!--components/Cell/Cell.wxml-->
-<view class="c-cell {{noPadding ? '': 'cell-padding'}} {{line ? 'line' : ''}} {{container ? 'block' : ''}}">
+<Cell class="className">
+  <view class="c-cell className {{noPadding ? '': 'cell-padding'}} {{line ? 'line' : ''}} {{container ? 'block' : ''}}">
 
-  <view class="c-cell-left" wx:if="{{!container}}">
-    <text class="c-cell-label" wx:if="{{label}}">{{label}}</text>
-    <slot name="label"></slot>
+    <view class="c-cell-left" wx:if="{{!container}}">
+      <text class="c-cell-label" wx:if="{{label}}">{{label}}</text>
+      <slot name="label"></slot>
+    </view>
+
+    <view class="c-cell-right" wx:if="{{!container}}">
+      <text class="c-cell-value {{valueClass}}"
+            wx:if="{{value}}">{{value}}</text>
+      <slot name="value"></slot>
+      <view class="c-cell-icon icon-arrow" wx:if="{{arrow}}"></view>
+    </view>
+
+    <slot></slot>
   </view>
+</Cell>
 
-  <view class="c-cell-right" wx:if="{{!container}}">
-    <text class="c-cell-value {{valueClass}}"
-          wx:if="{{value}}">{{value}}</text>
-    <slot name="value"></slot>
-    <view class="c-cell-icon icon-arrow" wx:if="{{arrow}}"></view>
-  </view>
-
-  <slot></slot>
-</view>

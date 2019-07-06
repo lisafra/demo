@@ -30,7 +30,10 @@ export const formVerify = (value, type) => {
     password: '密码',
     name: '姓名',
     phone: '手机号',
-    age: '年龄'
+    age: '年龄',
+    consigneeInfo: '请选择收货人信息',
+    storeId: '请选择驿站',
+    supplier: '请选择供应商'
   }
 
   if (!value) {
@@ -40,4 +43,16 @@ export const formVerify = (value, type) => {
     return false
   }
   return true
+}
+
+export const showModal = ({title = '', content = '', showCancel = false, confirmColor = "#EF260E", success, cancelText,confirmText}) =>  {
+  wx.showModal({
+    title,
+    content,
+    showCancel,
+    confirmColor,
+    cancelText,
+    confirmText,
+    success
+  })
 }
