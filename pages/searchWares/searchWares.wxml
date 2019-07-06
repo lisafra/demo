@@ -2,7 +2,7 @@
 <view class="page-container">
 
   <!-- 搜索商品 -->
-  <Search placeholder="请输入商品名称或SKU编号" inputType="number" bindsearch="searchWares"/>
+  <Search placeholder="请输入商品名称或SKU编号" bindsearch="searchWares"/>
 
   <!-- 商品列表 -->
   <view class="page-section search-result" wx:if="{{searchResult.length}}">

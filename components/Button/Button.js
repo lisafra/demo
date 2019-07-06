@@ -15,6 +15,10 @@ Component({
     disabled: {
       type: Boolean,
       value: false
+    },
+    placeholderArea: {
+      type: Boolean,
+      value: false
     }
   },
 

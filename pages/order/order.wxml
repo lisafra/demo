@@ -97,6 +97,7 @@
   </view>
 
   <!-- 页面按钮 -->
-  <c-button text="下单" disabled="{{false}}" catchtap="submitOrder"></c-button>
+  <c-button text="下单" placeholderArea="{{wareList.length}}"
+            catchtap="submitOrder"></c-button>
 
 </view>

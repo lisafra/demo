@@ -33,7 +33,8 @@ export const formVerify = (value, type) => {
     age: '年龄',
     consigneeInfo: '收货人',
     storeId: '驿站',
-    supplier: '供应商'
+    supplier: '供应商',
+    skus: '商品'
   }
 
   let title = ``

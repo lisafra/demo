@@ -187,9 +187,10 @@ Page({
     const {consigneeInfo} = app.globalData.orderInfo
 
     // 下单前校验
-    if (!formVerify(consigneeInfo, 'consigneeInfo')) return
-    if (!formVerify(storeId, 'storeId')) return
-    if (!formVerify(supplierId, 'supplier')) return
+    if (!formVerify(consigneeInfo, 'consigneeInfo') || !formVerify(storeId, 'storeId') || !formVerify(supplierId, 'supplier') || !formVerify(skuInfoVOs.length, 'skus')) {
+      this.setData({loading: false})
+      return
+    }
 
     const {provinceName, cityName, countyName, userName, telNumber, detailInfo} = consigneeInfo
 
@@ -223,7 +224,7 @@ Page({
       success (res) {
         if (res.confirm) {
           app.globalData.orderInfo = {}
-          wx.redirectTo({url: globalData.path.index})
+          wx.reLaunch({url: globalData.path.index})
         }
       }
     })

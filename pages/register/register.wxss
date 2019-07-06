@@ -1,1 +1,4 @@
 /* pages/register/register.wxss */
+.page-footer-placeholder{
+  display: none;
+}
