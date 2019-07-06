@@ -12,7 +12,8 @@ Page({
    */
   data: {
     addressInfo: {},
-    pickerValue: {}
+    pickerValue: {},
+    loading: false
   },
 
   navigateTo,
@@ -48,22 +49,27 @@ Page({
     this.setData({
       addressInfo: Object.assign(this.data.addressInfo, e.detail)
     })
+
+    console.log('选择的城市变了', this.data)
   },
 
-  onConfirm() {
-    app.globalData.orderInfo.addressInfo = this.data.addressInfo
-    navigateTo({
-      url: 'consigneeInfo',
-      navigateType: 'redirectTo'
+  selectAreaConfirm() {
+    const {loading, addressInfo} = this.data
+    if (loading) return
+    this.setData({loading: true})
+    app.globalData.orderInfo.addressInfo = addressInfo
+    console.log('走了几次这个地方', addressInfo)
+    wx.navigateBack({
+      success: () => {
+        this.setData({loading: false})
+      }
     })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-
-  },
+  onLoad: function (options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成

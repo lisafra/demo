@@ -31,7 +31,6 @@ Component({
     this.initCityData()
   },
 
-
   /**
    * 组件的方法列表
    */
@@ -53,26 +52,24 @@ Component({
         citys: citys[0]['districts'],
         districts: citys[0]['districts'][0]['districts']
       });
-
-      console.log('获取城市数据', this.data)
+      this.emitChange()
     },
 
     bindChange(e) {
       let val = e.detail.value;
       const { value, provinces} = this.data
-
       this.setData({
         value: val,
         citys: provinces[val[0]]['districts'].length > 0 ? provinces[val[0]]['districts'] : [],
         districts: provinces[val[0]]['districts'].length > 0 ? (provinces[val[0]]['districts'][val[1]] ? provinces[val[0]]['districts'][val[1]]['districts'] : []) : ''
       })
-      this.onConfirm()
+      this.emitChange()
     },
 
-    onConfirm() {
+    emitChange() {
       const {value, provinces, citys, districts} = this.data
       const [province, city, district] = value;
-      console.log('选择的城市变了', this.data)
+      // console.log('选择的城市变了', this.data)
       this.triggerEvent('selected',{
         province: provinces[province].name,
         city: citys.length > 1 ? citys[city].name : '',

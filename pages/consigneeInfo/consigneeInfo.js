@@ -38,7 +38,9 @@ Page({
   selectArea() {
     console.log(this.data)
     wx.setStorageSync('consigneeInfo', this.data.consigneeInfo)
-    navigateTo({url: 'selectArea'})
+    navigateTo({
+      url: 'selectArea'
+    })
   },
 
   selectAddress(e) {

@@ -11,7 +11,12 @@ Component({
       type: String,
       value: 'text'
     },
-    value: String,
+    value: {
+      type: String,
+      observer: function (newVal) {
+        this.setData({keyword: newVal})
+      }
+    },
     disabled: Boolean
   },
 

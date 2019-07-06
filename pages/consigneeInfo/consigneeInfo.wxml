@@ -24,8 +24,6 @@
 
         <text wx:if="{{consigneeInfo.provinceName}}">{{consigneeInfo.provinceName}} {{consigneeInfo.cityName}} {{consigneeInfo.countyName}}</text>
         <text wx:else>请选择</text>
-
-
         <image class="icon-position"
                src="/images/position.png"></image>
       </view>
@@ -59,6 +57,6 @@
   </block>
 
   <!-- 页面按钮 -->
-  <c-button text="确定" bindtap="onConfirm"/>
+  <c-button text="确定" catchtap="onConfirm"/>
 
 </view>
