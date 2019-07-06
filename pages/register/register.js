@@ -55,10 +55,7 @@ Page({
           wx.showToast({
             title: '注册成功！'
           })
-          navigateTo({
-            url: 'index',
-            navigateType: 'redirectTo'
-          })
+          wx.navigateBack()
         } else {
           this.setData({loading: false})
         }

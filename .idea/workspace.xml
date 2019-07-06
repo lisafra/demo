@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list id="2fe0b004-d6bd-4ab2-a543-90e08dd176ed" name="Default" comment="" />
     <list default="true" id="32cc8600-4b40-4e60-b9c6-de1ff412a9da" name="Default Changelist" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/CityPicker/CityPicker.js" afterPath="$PROJECT_DIR$/components/CityPicker/CityPicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Search/Search.js" afterPath="$PROJECT_DIR$/components/Search/Search.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.js" afterPath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.wxml" afterPath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/selectArea/selectArea.js" afterPath="$PROJECT_DIR$/pages/selectArea/selectArea.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/selectArea/selectArea.wxml" afterPath="$PROJECT_DIR$/pages/selectArea/selectArea.wxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/register/register.js" afterPath="$PROJECT_DIR$/pages/register/register.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -64,7 +60,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.58774585">
+    <splitter split-orientation="horizontal" split-proportion="0.3981832">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="selectArea.js" pinned="false" current-in-tab="true">
@@ -193,12 +189,24 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="CityPicker.wxml" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CityPicker.wxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="260">
-                  <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+                <state relative-caret-position="338">
+                  <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="register.js" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/pages/register/register.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="245">
+                  <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#30#72#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -279,7 +287,6 @@
         <option value="$PROJECT_DIR$/pages/selectArea/selectArea.wxss" />
         <option value="$PROJECT_DIR$/components/CityPicker/CityPicker.wxml" />
         <option value="$PROJECT_DIR$/components/CityPicker/CityPicker.wxss" />
-        <option value="$PROJECT_DIR$/pages/register/register.js" />
         <option value="$PROJECT_DIR$/components/Cell/Cell.js" />
         <option value="$PROJECT_DIR$/components/Cell/Cell.wxml" />
         <option value="$PROJECT_DIR$/utils/format.js" />
@@ -306,6 +313,7 @@
         <option value="$PROJECT_DIR$/components/CityPicker/CityPicker.js" />
         <option value="$PROJECT_DIR$/components/Search/Search.js" />
         <option value="$PROJECT_DIR$/pages/selectArea/selectArea.js" />
+        <option value="$PROJECT_DIR$/pages/register/register.js" />
       </list>
     </option>
   </component>
@@ -322,7 +330,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="68" />
+    <option name="x" value="-127" />
     <option name="y" value="23" />
     <option name="width" value="1660" />
     <option name="height" value="829" />
@@ -432,6 +440,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="register" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -720,15 +732,15 @@
       <option name="presentableId" value="Default" />
       <updated>1561794083967</updated>
       <workItem from="1561794088429" duration="1798000" />
-      <workItem from="1561797323706" duration="130047000" />
+      <workItem from="1561797323706" duration="130210000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88400000" />
+    <option name="totallyTimeSpent" value="88563000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="68" y="23" width="1660" height="829" extended-state="0" />
+    <frame x="-127" y="23" width="1660" height="829" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1929182" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1084,16 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/register/register.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="38" column="56" lean-forward="false" selection-start-line="38" selection-start-column="56" selection-end-line="38" selection-end-column="56" />
-          <folding>
-            <element signature="e#30#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Cell/Cell.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1176,14 +1178,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="10" column="7" lean-forward="false" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/Search/Search.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="257">
@@ -1222,6 +1216,24 @@
           <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
             <element signature="e#284#980#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/components/CityPicker/CityPicker.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/register/register.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="52" column="0" lean-forward="true" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
+          <folding>
+            <element signature="e#30#72#0" expanded="true" />
           </folding>
         </state>
       </provider>
