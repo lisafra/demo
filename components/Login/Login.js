@@ -1,6 +1,7 @@
 // components/Login/Login.js
 
 import { login } from '../../api/account'
+import { formVerify } from '../../utils/util'
 
 Component({
   /**
@@ -34,27 +35,12 @@ Component({
       this.setData(data)
     },
 
-    formVerify(value, type) {
-      const error = {
-        account: '用户名',
-        password: '密码'
-      }
-      if (!value) {
-        wx.showToast({
-          title: `${error[type]}不能为空`
-        })
-        this.setData({loading: false})
-        return false
-      }
-      return true
-    },
-
     onLogin () {
       const {account, password, loading} = this.data
       if (loading) return
 
-      if (!this.formVerify(account, 'account')) return
-      if (!this.formVerify(password, 'password')) return
+      if (!formVerify(account, 'account')) return
+      if (!formVerify(password, 'password')) return
 
       this.setData({loading: true})
 

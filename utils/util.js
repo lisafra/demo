@@ -31,14 +31,16 @@ export const formVerify = (value, type) => {
     name: '姓名',
     phone: '手机号',
     age: '年龄',
-    consigneeInfo: '请选择收货人信息',
-    storeId: '请选择驿站',
-    supplier: '请选择供应商'
+    consigneeInfo: '收货人',
+    storeId: '驿站',
+    supplier: '供应商'
   }
 
   if (!value) {
     wx.showToast({
-      title: `${error[type]}不能为空`
+      title: `${error[type]}不能为空`,
+      icon: 'none'
+      // image: '/images/warn.png'
     })
     return false
   }

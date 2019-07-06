@@ -14,48 +14,7 @@ Page({
   data: {
     supplierID: '',
     searchHistoryRecord: null,
-    searchResult: null
-    // searchResult: [{
-    //   groupPrice: 300.3,
-    //   groupStock: "200.01",
-    //   mainImageUrl: "//static.chj-inn.com/ware/ware.png",
-    //   skuID: 6501,
-    //   storeID: 2501,
-    //   storePrice: 300.3,
-    //   storeStock: "200.00",
-    //   supplierID: 1501,
-    //   wareBusinessType: 1,
-    //   wareIntroduction: "详细描述333",
-    //   wareName: "端午节嘉兴粽子咸鸭蛋酱鸭大礼包 端午十粽十味双层竹篮礼篮1968g",
-    //   wareOrigin: "地产",
-    //   wareProductType: 1,
-    //   wareSlogan: "广告语",
-    //   wareTemperatureDescription: 2,
-    //   wareTypeOfMeasurement: 1,
-    //   wareUnitOfMeasurement: 2,
-    //   checked: false
-    // },
-    //   {
-    //     groupPrice: 300.3,
-    //     groupStock: "200.01",
-    //     mainImageUrl: "//static.chj-inn.com/ware/ware.png",
-    //     skuID: 6501,
-    //     storeID: 2501,
-    //     storePrice: 300.3,
-    //     storeStock: "200.00",
-    //     supplierID: 1501,
-    //     wareBusinessType: 1,
-    //     wareIntroduction: "详细描述333",
-    //     wareName: "端午节嘉兴粽子咸鸭蛋酱鸭大礼包 端午十粽十味双层竹篮礼篮1968g",
-    //     wareOrigin: "地产",
-    //     wareProductType: 1,
-    //     wareSlogan: "广告语",
-    //     wareTemperatureDescription: 2,
-    //     wareTypeOfMeasurement: 1,
-    //     wareUnitOfMeasurement: 2,
-    //     checked: false,
-    //   }
-    // ]
+    searchResult: []
   },
 
   /**
@@ -64,12 +23,10 @@ Page({
   onLoad: function (options) {
     const {supplierID} = options
     if (supplierID) this.setData({supplierID})
-
     console.log('【初始化页面数据】', this.data)
   },
 
   searchWares (e) {
-
     const {keyword} = e.detail
     const params = {}
     if (keyword) {
@@ -109,7 +66,8 @@ Page({
     app.globalData.orderInfo.wareList = selectWare
     if (!selectWare.length) {
       wx.showToast({
-        title: '请选择商品'
+        title: !wareList.length ? '请搜索并选择商品' : '请选择商品',
+        icon: 'none'
       })
       return
     }

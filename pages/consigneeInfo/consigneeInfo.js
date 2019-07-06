@@ -70,7 +70,7 @@ Page({
       if (!this.verifyForm()) {
         wx.showToast({
           title: '信息填写不全',
-          icon: 'warn'
+          icon: 'none'
         })
         return
       }
