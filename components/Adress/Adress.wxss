@@ -13,7 +13,8 @@
 
 .consignee-info.small{
   width: 350rpx;
-  min-height: 154rpx;
+  height: 154rpx;
+  overflow: hidden;
   padding: 20rpx 24rpx 24rpx;
   font-size: 24rpx;
 }

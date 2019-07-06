@@ -9,6 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    loading: false,
     consigneeInfo: null,
     historyAddress: []
   },
@@ -65,7 +66,8 @@ Page({
   },
 
   onConfirm(consigneeInfo, newAdd = true) {
-
+    console.log('确认收货地址走了几遍')
+    if (this.data.loading) return
     // 点击页面的确定按钮时, 表示新增一个收货人
     if (newAdd) {
 
@@ -81,15 +83,16 @@ Page({
       // 将新增的收货人推入本地缓存里
       wx.setStorageSync('historyAddress', this.data.historyAddress.concat(consigneeInfo))
     }
-
     // 清空缓存的姓名和手机号
     wx.setStorageSync('consigneeInfo', {})
     console.log('查看数据保存成功了吗', consigneeInfo)
-
     app.globalData.orderInfo.consigneeInfo = consigneeInfo
-    navigateTo({
-      url: 'order',
-      navigateType: 'navigateBack'
+
+    this.setData({loading: true})
+    wx.navigateBack({
+      success: () => {
+        this.setData({loading: false})
+      }
     })
   },
 

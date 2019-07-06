@@ -14,7 +14,8 @@ Page({
   data: {
     supplierID: '',
     searchHistoryRecord: null,
-    searchResult: []
+    searchResult: [],
+    loading: false
   },
 
   /**
@@ -61,6 +62,9 @@ Page({
   },
 
   onConfirm(e) {
+    if (this.data.loading) return
+    this.setData({loading: true})
+
     const wareList = this.data.searchResult
     const selectWare = wareList.filter(item => item.checked === true)
     app.globalData.orderInfo.wareList = selectWare
@@ -71,10 +75,11 @@ Page({
       })
       return
     }
-    console.log(selectWare, wareList)
-    navigateTo({
-      url: 'order',
-      navigateType: 'navigateBack'
+    console.log('选择商品走了几遍')
+    wx.navigateBack({
+      success: () => {
+        this.setData({loading: false})
+      }
     })
   },
 
