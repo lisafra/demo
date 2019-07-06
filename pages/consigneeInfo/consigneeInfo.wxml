@@ -28,13 +28,14 @@
                src="/images/position.png"></image>
       </view>
     </Cell>
+    <view class="display-space-between detail-address">
+      <view class="cell-label">详细地址</view>
+      <textarea slot="value" placeholder="请输入"
+                data-key="detailInfo"
+                bindinput="inputSetData"
+                value="{{consigneeInfo.detailInfo}}"/>
 
-    <Cell label="详细地址" line="{{false}}">
-      <input slot="value" placeholder="请输入"
-             data-key="detailInfo"
-             bindinput="inputSetData"
-             value="{{consigneeInfo.detailInfo}}"/>
-    </Cell>
+    </view>
 
   </view>
 

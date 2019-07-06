@@ -20,6 +20,10 @@ input {
   width: 100%;
   min-height: auto;
 }
+textarea {
+  box-sizing: border-box;
+  height: 80rpx;
+}
 
 /* lib */
 .strong{
@@ -117,6 +121,10 @@ input {
 
 .cell-indent-right{
   margin-right: 20rpx;
+}
+
+.cell-label{
+  width: 200rpx;
 }
 
 
