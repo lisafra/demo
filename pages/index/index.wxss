@@ -1,4 +1,8 @@
 /**index.wxss**/
+.page-container{
+  width: 100vw;
+  overflow: hidden;
+}
 .circle-gray-bg{
   position: absolute;
   z-index: -1;
