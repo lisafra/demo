@@ -19,7 +19,7 @@
 
     <view class="space-between bottom-info">
       <text class="product-price">{{data.priceLabel}}</text>
-      <text class="product-price">{{data.buyCount}}</text>
+      <!--<text class="product-price">{{data.buyCount}}</text>-->
       <BuyCount wx:if="{{!disabled}}"
                 value="{{data.buyCount}}"
                 bindchange="changeBuyCount"/>

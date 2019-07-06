@@ -23,6 +23,9 @@
 
 .consignee-info-wrap{
   position: relative;
+  padding-right: 60rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
 }
 
 .icon-arrow{

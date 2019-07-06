@@ -4,29 +4,9 @@
     <list id="2fe0b004-d6bd-4ab2-a543-90e08dd176ed" name="Default" comment="" />
     <list default="true" id="32cc8600-4b40-4e60-b9c6-de1ff412a9da" name="Default Changelist" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.wxss" afterPath="$PROJECT_DIR$/app.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Button/Button.js" afterPath="$PROJECT_DIR$/components/Button/Button.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Button/Button.wxml" afterPath="$PROJECT_DIR$/components/Button/Button.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/BuyCount/BuyCount.js" afterPath="$PROJECT_DIR$/components/BuyCount/BuyCount.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/BuyCount/BuyCount.wxml" afterPath="$PROJECT_DIR$/components/BuyCount/BuyCount.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Cell/Cell.wxss" afterPath="$PROJECT_DIR$/components/Cell/Cell.wxss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml" afterPath="$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Login/Login.wxml" afterPath="$PROJECT_DIR$/components/Login/Login.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Search/Search.wxml" afterPath="$PROJECT_DIR$/components/Search/Search.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.js" afterPath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.wxml" afterPath="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/index/index.wxml" afterPath="$PROJECT_DIR$/pages/index/index.wxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/order/order.js" afterPath="$PROJECT_DIR$/pages/order/order.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/order/order.wxml" afterPath="$PROJECT_DIR$/pages/order/order.wxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/order/order.wxss" afterPath="$PROJECT_DIR$/pages/order/order.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/register/register.js" afterPath="$PROJECT_DIR$/pages/register/register.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/register/register.wxml" afterPath="$PROJECT_DIR$/pages/register/register.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/searchWares/searchWares.wxml" afterPath="$PROJECT_DIR$/pages/searchWares/searchWares.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/searchWares/searchWares.wxss" afterPath="$PROJECT_DIR$/pages/searchWares/searchWares.wxss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/selectArea/selectArea.js" afterPath="$PROJECT_DIR$/pages/selectArea/selectArea.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/selectArea/selectArea.wxml" afterPath="$PROJECT_DIR$/pages/selectArea/selectArea.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/utils/util.js" afterPath="$PROJECT_DIR$/utils/util.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -117,11 +97,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="order.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="order.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/order/order.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="220">
-                  <caret line="101" column="14" lean-forward="false" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
+                <state relative-caret-position="362">
+                  <caret line="134" column="8" lean-forward="false" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -160,17 +140,17 @@
           <file leaf-file-name="order.wxss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/pages/order/order.wxss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="163">
-                  <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+                <state relative-caret-position="296">
+                  <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Cell.wxss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Cell.wxss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/Cell/Cell.wxss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
+                <state relative-caret-position="468">
                   <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
                   <folding />
                 </state>
@@ -180,8 +160,8 @@
           <file leaf-file-name="app.wxss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app.wxss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="239">
-                  <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
+                <state relative-caret-position="115">
+                  <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -191,11 +171,11 @@
       </split-first>
       <split-second>
         <leaf>
-          <file leaf-file-name="order.wxml" pinned="false" current-in-tab="false">
+          <file leaf-file-name="order.wxml" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="473">
-                  <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
+                <state relative-caret-position="104">
+                  <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
@@ -204,14 +184,14 @@
           <file leaf-file-name="GoodsItem.wxml" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="373">
-                  <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+                <state relative-caret-position="137">
+                  <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="BuyCount.js" pinned="false" current-in-tab="true">
+          <file leaf-file-name="BuyCount.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/components/BuyCount/BuyCount.js">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="442">
@@ -307,7 +287,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>是gik</find>
       <find>是否</find>
       <find>是否wg</find>
       <find>是否登录</find>
@@ -337,6 +316,7 @@
       <find>.c-cel</find>
       <find>.c-cell</find>
       <find>searchWaresParam</find>
+      <find>page-se</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -383,19 +363,19 @@
         <option value="$PROJECT_DIR$/pages/selectArea/selectArea.js" />
         <option value="$PROJECT_DIR$/pages/searchWares/searchWares.wxml" />
         <option value="$PROJECT_DIR$/app.wxss" />
-        <option value="$PROJECT_DIR$/pages/order/order.wxss" />
-        <option value="$PROJECT_DIR$/pages/order/order.wxml" />
         <option value="$PROJECT_DIR$/pages/searchWares/searchWares.wxss" />
         <option value="$PROJECT_DIR$/pages/register/register.js" />
         <option value="$PROJECT_DIR$/utils/util.js" />
         <option value="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/pages/selectArea/selectArea.wxml" />
-        <option value="$PROJECT_DIR$/pages/order/order.js" />
-        <option value="$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml" />
         <option value="$PROJECT_DIR$/components/BuyCount/BuyCount.js" />
         <option value="$PROJECT_DIR$/pages/consigneeInfo/consigneeInfo.wxml" />
         <option value="$PROJECT_DIR$/components/Cell/Cell.wxss" />
+        <option value="$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml" />
+        <option value="$PROJECT_DIR$/pages/order/order.wxml" />
+        <option value="$PROJECT_DIR$/pages/order/order.wxss" />
+        <option value="$PROJECT_DIR$/pages/order/order.js" />
       </list>
     </option>
   </component>
@@ -872,12 +852,12 @@
       <option name="presentableId" value="Default" />
       <updated>1561794083967</updated>
       <workItem from="1561794088429" duration="1798000" />
-      <workItem from="1561797323706" duration="137566000" />
+      <workItem from="1561797323706" duration="138206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95919000" />
+    <option name="totallyTimeSpent" value="96559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="28" width="1660" height="829" extended-state="0" />
@@ -890,7 +870,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0013568521" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.048846677" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1231,14 +1211,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.wxss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="136" column="0" lean-forward="true" selection-start-line="136" selection-start-column="0" selection-end-line="136" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/searchWares/searchWares.wxss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="52">
@@ -1315,30 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="65" column="20" lean-forward="false" selection-start-line="65" selection-start-column="20" selection-end-line="65" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="21" column="20" lean-forward="true" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/order/order.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="101" column="14" lean-forward="false" selection-start-line="101" selection-start-column="14" selection-end-line="101" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/components/BuyCount/BuyCount.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1355,18 +1303,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/order/order.wxss">
+    <entry file="file://$PROJECT_DIR$/components/GoodsItem/GoodsItem.wxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="163">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+        <state relative-caret-position="137">
+          <caret line="22" column="33" lean-forward="false" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/components/Cell/Cell.wxss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
+        <state relative-caret-position="468">
           <caret line="18" column="14" lean-forward="false" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order/order.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="34" lean-forward="false" selection-start-line="4" selection-start-column="34" selection-end-line="4" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="50" column="8" lean-forward="false" selection-start-line="50" selection-start-column="1" selection-end-line="50" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order/order.wxss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="30" column="12" lean-forward="true" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/order/order.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="134" column="8" lean-forward="false" selection-start-line="134" selection-start-column="8" selection-end-line="134" selection-end-column="8" />
           <folding />
         </state>
       </provider>

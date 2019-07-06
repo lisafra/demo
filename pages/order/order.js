@@ -119,7 +119,6 @@ Page({
 
   // picker 事件统一处理函数
   bindPickerChange(e) {
-    console.log('【pick change】', e)
     const {value} = e.detail
     const {type} = e.target.dataset
     let changeObj = {}
@@ -127,12 +126,14 @@ Page({
     this.setData(changeObj)
     if (type === 'supplierIndex') {
       const {supplierList} = this.data
-      console.log('【pick change】', supplierList)
+      app.globalData.orderInfo.wareList = null
       this.setData({
+        wareList: null,
         searchWaresParam: {
           supplierID: supplierList[value - 0].id
         }
       })
+      console.log('【pick change】', this.data)
 
     }
   },
