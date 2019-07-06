@@ -22,7 +22,7 @@
     </Cell>
 
     <view class="button-wrap">
-      <button class="theme-button" type="primary" bindtap="onLogin">登录</button>
+      <button class="theme-button" type="primary" catchtap="onLogin">登录</button>
     </view>
 
   </view>

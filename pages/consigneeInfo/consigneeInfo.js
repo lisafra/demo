@@ -2,6 +2,8 @@
 const app = getApp()
 const { globalData, navigateTo, decodeURL} = app
 
+import { formVerify } from '../../utils/util'
+
 
 Page({
 
@@ -60,7 +62,6 @@ Page({
 
   verifyForm () {
     // 城市可以为空
-    console.log(this.data.consigneeInfo)
     const {userName, telNumber, provinceName, countyName, detailInfo} = this.data.consigneeInfo
     return userName && telNumber && provinceName && countyName && detailInfo
   },
@@ -70,6 +71,7 @@ Page({
     if (this.data.loading) return
     // 点击页面的确定按钮时, 表示新增一个收货人
     if (newAdd) {
+      consigneeInfo  = this.data.consigneeInfo
 
       if (!this.verifyForm()) {
         wx.showToast({
@@ -79,7 +81,7 @@ Page({
         return
       }
 
-      consigneeInfo  = this.data.consigneeInfo
+      if (!formVerify(consigneeInfo.telNumber, 'phone')) return
       // 将新增的收货人推入本地缓存里
       wx.setStorageSync('historyAddress', this.data.historyAddress.concat(consigneeInfo))
     }

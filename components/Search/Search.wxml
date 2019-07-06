@@ -6,7 +6,7 @@
          bindinput="onInput"
          placeholder="{{placeholder}}"
          disabled="{{disabled}}"/>
-  <view class="search-btn" bindtap="onSearch">
+  <view class="search-btn" catchtap="onSearch">
     <image class="icon-search" src="/images/search.png"></image>
   </view>
 </view>

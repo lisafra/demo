@@ -44,7 +44,7 @@
 
 
   <!-- 页面按钮 -->
-  <c-button text="注册" bindtap="onRegister"/>
+  <c-button text="注册" catchtap="onRegister"/>
 
 </view>
 

@@ -22,13 +22,15 @@ Page({
     storeIndex: 1,
     supplierIndex: 0,
     supplierList: null,
+    supplierListPickerData: null,
     wareIndex: 0,
     wareList: null,
     orderPayType: 0,
     payTypeConf: ['现金支付', '其它'],
     totalCount: 0,
     totalPrice: 0,
-    skuInfoVOs: []
+    skuInfoVOs: [],
+    loading: false
   },
 
   navigateTo,
@@ -58,6 +60,7 @@ Page({
       if (res.success) {
         this.setData({
           supplierList: res.data,
+          supplierListPickerData: res.data.map(item => item.name),
           searchWaresParam: {
             supplierID: res.data[this.data.supplierIndex].id
           }
@@ -122,6 +125,16 @@ Page({
     let changeObj = {}
     changeObj[type] = value - 0
     this.setData(changeObj)
+    if (type === 'supplierIndex') {
+      const {supplierList} = this.data
+      console.log('【pick change】', supplierList)
+      this.setData({
+        searchWaresParam: {
+          supplierID: supplierList[value - 0].id
+        }
+      })
+
+    }
   },
 
   // 删除商品
@@ -143,18 +156,30 @@ Page({
         cancelText: '否',
         confirmText: '是',
         success: res => {
-          console.log('是', this)
-          this.deleteWare(e)
+          console.log('是', res)
+          if (res.confirm) {
+            this.deleteWare(e)
+            return
+          } else {
+            console.log('不删除商品')
+            data.buyCount = 1
+            app.globalData.orderInfo.wareList[index] = data
+            this.computeOrderPriceInfo()
+          }
         }
       })
+    } else {
+      console.log('change data', data)
+      app.globalData.orderInfo.wareList[index] = data
+      this.computeOrderPriceInfo()
     }
-    app.globalData.orderInfo.wareList[index] = data
-    this.computeOrderPriceInfo()
-    // console.log('修改商品数量', e, app.globalData.orderInfo)
   },
 
   // 下单
   submitOrder () {
+    if (this.data.loading) return
+    this.setData({loading: true})
+
     const {orderPayType, storeIndex, skuInfoVOs, storeList, supplierList, supplierIndex} = this.data
     const storeId = storeList[storeIndex].id
     const supplierId = supplierList[supplierIndex].id
@@ -177,7 +202,13 @@ Page({
       areaCode: `${provinceName},${cityName},${countyName}`,
       buyerAddress: detailInfo
     }).then(res => {
-      if (res.success) this.orderSuccess()
+      if (res.success) {
+        this.orderSuccess()
+      } else {
+        this.setData({loading: false})
+      }
+    }).catch(error => {
+      this.setData({loading: false})
     })
   },
 
@@ -191,7 +222,7 @@ Page({
       success (res) {
         if (res.confirm) {
           app.globalData.orderInfo = {}
-          wx.navigateTo({url: globalData.path.index})
+          wx.redirectTo({url: globalData.path.index})
         }
       }
     })

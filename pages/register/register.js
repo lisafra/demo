@@ -53,9 +53,11 @@ Page({
       .then(res => {
         if (res.success) {
           wx.showToast({
-            title: '注册成功！'
+            title: '注册成功！',
+            success: () => {
+              wx.navigateBack()
+            }
           })
-          wx.navigateBack()
         } else {
           this.setData({loading: false})
         }

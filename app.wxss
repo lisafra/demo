@@ -127,6 +127,28 @@ textarea {
   width: 200rpx;
 }
 
+.icon-arrow{
+  margin-left: 16rpx;
+  margin-right: 10rpx;
+  width: 14rpx;
+  height: 20rpx;
+  position: relative;
+}
+
+.icon-arrow:after{
+  content: " ";
+  display: inline-block;
+  height: 18rpx;
+  width: 18rpx;
+  border-width: 2rpx 2rpx 0 0;
+  border-color: #888888;
+  border-style: solid;
+  transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
 
 /*@media  (-webkit-min-device-pixel-ratio: 2),(min-device-pixel-ratio: 2){
 

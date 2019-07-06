@@ -54,11 +54,11 @@ Page({
   },
 
   selectAreaConfirm() {
+    console.log('走了几次这个地方', addressInfo)
     const {loading, addressInfo} = this.data
     if (loading) return
     this.setData({loading: true})
     app.globalData.orderInfo.addressInfo = addressInfo
-    console.log('走了几次这个地方', addressInfo)
     wx.navigateBack({
       success: () => {
         this.setData({loading: false})

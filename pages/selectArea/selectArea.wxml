@@ -5,7 +5,7 @@
   <Search inputType="number" disabled
           placeholder="请输入省份/城市/市区名称"
           value="{{addressInfo.address}}"
-          bindtap="selectAddress"/>
+          catchsearch="selectAddress"/>
 
   <!-- 区域选择 -->
   <view class="page-section pick-city">

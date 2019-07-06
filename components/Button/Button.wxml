@@ -1,6 +1,6 @@
 <!--components/Button/Button.wxml-->
 <view class="page-footer-placeholder"></view>
 <view class="page-footer">
-  <button class="theme-button" type="primary" disabled="{{disabled}}" bindtap="onTap">{{text}}</button>
+  <button class="theme-button" type="primary" disabled="{{disabled}}">{{text}}</button>
   <slot></slot>
 </view>

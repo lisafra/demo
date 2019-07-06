@@ -2,7 +2,8 @@
 <view class="page-container">
 
   <!-- 收货人信息 -->
-  <view bindtap="navigateTo" data-url="consigneeInfo">
+  <view class="consignee-info-wrap" catchtap="navigateTo" data-url="consigneeInfo">
+    <view class="icon-arrow" src="/images/right-arrow.png"></view>
     <view class="page-section consignee-info" wx:if="{{!consigneeInfo}}" >
       <text class="page-title-big">收货人信息</text>
       <text class="page-text">请输入收货人地址信息</text>
@@ -28,15 +29,21 @@
     </Cell>
 
     <Cell label="供应商" arrow>
-      <text slot="value" class="strong">{{supplierList[supplierIndex].name || '请选择'}}</text>
+      <!--<text slot="value" class="strong">{{supplierListPickerData[supplierIndex]}}</text>-->
+      <picker slot="value" bindchange="bindPickerChange"
+      value="{{supplierListPickerData[supplierIndex].name}}"
+      data-type="supplierIndex"
+      range="{{supplierListPickerData}}">
+      <view class="strong">{{supplierListPickerData[supplierIndex]}}</view>
+      </picker>
     </Cell>
 
     <!-- 选择商品 -->
     <Cell label="选择商品" arrow
-          bindtap="navigateTo"
+          catchtap="navigateTo"
           data-url="searchWares"
           data-params="{{searchWaresParam}}">
-      <text slot="value">{{!wareList.length ? '请输入SKU编号' : wareList[wareIndex].skuID}}</text>
+      <text slot="value">{{!wareList.length ? '请输入商品名称或SKU编号' : wareList[wareIndex].skuID}}</text>
     </Cell>
 
     <!-- 商品购买区 -->
@@ -90,6 +97,6 @@
   </view>
 
   <!-- 页面按钮 -->
-  <c-button text="下单" disabled="{{false}}" bindtap="submitOrder"></c-button>
+  <c-button text="下单" disabled="{{false}}" catchtap="submitOrder"></c-button>
 
 </view>

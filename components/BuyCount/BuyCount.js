@@ -7,7 +7,8 @@ Component({
     value: {
       type: Number,
       value: 1,
-      observer: function (newVal) {
+      observer: function (newVal, old, info) {
+        console.log(newVal, old, info)
         this.setData({num: newVal})
       }
     }

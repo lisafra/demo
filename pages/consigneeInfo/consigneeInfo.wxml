@@ -19,8 +19,8 @@
              value="{{consigneeInfo.telNumber}}"/>
     </Cell>
 
-    <Cell label="省市区">
-      <view slot="value" class="display-center" bindtap="selectArea">
+    <Cell label="省市区" catchtap="selectArea">
+      <view slot="value" class="display-center">
 
         <text wx:if="{{consigneeInfo.provinceName}}">{{consigneeInfo.provinceName}} {{consigneeInfo.cityName}} {{consigneeInfo.countyName}}</text>
         <text wx:else>请选择</text>
@@ -51,7 +51,7 @@
               data="{{item}}"
               column="{{2}}"
               data-address="{{item}}"
-              bindtap="selectAddress"
+              catchtap="selectAddress"
       />
     </view>
 

@@ -20,3 +20,16 @@
   padding-bottom: 30rpx;
   margin-top: 10rpx;
 }
+
+.consignee-info-wrap{
+  position: relative;
+}
+
+.icon-arrow{
+  position: absolute;
+  width: 14rpx;
+  height: 20rpx;
+  right: 42rpx;
+  top: 50%;
+  margin-top: -7rpx;
+}

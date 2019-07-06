@@ -9,7 +9,7 @@
     <view class="space-between">
       <text class="product-desc">{{data.wareName}}</text>
       <view class="delete-btn" wx:if="{{!disabled}}"
-            bindtap="deleteItem">
+            catchtap="deleteItem">
         <image slot="top-row"
                class="delete-icon"
                src="asserts/bin.png"></image>
@@ -19,6 +19,7 @@
 
     <view class="space-between bottom-info">
       <text class="product-price">{{data.priceLabel}}</text>
+      <text class="product-price">{{data.buyCount}}</text>
       <BuyCount wx:if="{{!disabled}}"
                 value="{{data.buyCount}}"
                 bindchange="changeBuyCount"/>

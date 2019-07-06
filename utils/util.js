@@ -36,11 +36,16 @@ export const formVerify = (value, type) => {
     supplier: '供应商'
   }
 
-  if (!value) {
+  let title = ``
+
+  if (value && type === 'phone' && value.length < 11) {
+    title = '请输入正确的手机号'
+  }
+
+  if (!value || title) {
     wx.showToast({
-      title: `${error[type]}不能为空`,
+      title: title || `${error[type]}不能为空`,
       icon: 'none'
-      // image: '/images/warn.png'
     })
     return false
   }

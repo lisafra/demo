@@ -8,7 +8,7 @@ App({
     if (!e) return
     console.log(e)
     const { url, navigateType, params } = e.url ? e : e.currentTarget.dataset
-    console.log('监听路由', e, params, navigateType)
+    // console.log('监听路由', e, params, navigateType)
 
     const linkUrl = !url ? url : this.formatUrlParams(this.globalData.path[url], params)
 
