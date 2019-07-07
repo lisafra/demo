@@ -4,26 +4,29 @@
 
   <Login wx:if="{{!isLogin}}" bindsuccess="loginSuccess" />
 
-  <view class="page-container" wx:else>
-    <view class="circle-gray-bg"></view>
-    <view class="menu display-row">
-      <view class="page-section menu-item display-row"
-            catchtap="navigateTo"
-            data-url="{{item.linkTo}}"
-            wx:for="{{pageText.nav}}"
-            wx:key="index"
-            wx:for-item="item">
+ <block wx:else>
+   <image class="bg-banner" src="/images/banner.png"></image>
+   <view class="page-container">
+     <view class="menu display-row">
+       <view class="page-section menu-item display-row"
+             catchtap="navigateTo"
+             data-url="{{item.linkTo}}"
+             wx:for="{{pageText.nav}}"
+             wx:key="index"
+             wx:for-item="item">
 
-        <view class="icon-wrap">
-          <image class="icon icon-{{item.icon}}" src="/images/{{item.icon}}.png" mode="cover"></image>
-        </view>
+         <view class="icon-wrap">
+           <image class="icon icon-{{item.icon}}" src="/images/{{item.icon}}.png" mode="cover"></image>
+         </view>
 
-        <view class="menu-content display-column">
-          <text class="page-title">{{item.title}}</text>
-          <text class="page-desc-text">{{item.desc}}</text>
-        </view>
+         <view class="menu-content display-column">
+           <text class="page-title">{{item.title}}</text>
+           <text class="page-desc-text">{{item.desc}}</text>
+         </view>
 
-      </view>
-    </view>
-  </view>
+       </view>
+     </view>
+   </view>
+ </block>
+
 </view>

@@ -32,13 +32,15 @@
       />
     </Cell>
 
-    <Cell label="性别" arrow line="{{false}}" >
+
       <picker slot="value" bindchange="bindPickerChange"
               data-type="gender"
               range="{{genderList}}">
-        <view class="strong">{{genderList[gender]}}</view>
+        <Cell label="性别" arrow line="{{false}}" >
+          <view class="strong" slot="value">{{genderList[gender]}}</view>
+        </Cell>
       </picker>
-    </Cell>
+
 
   </view>
 

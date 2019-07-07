@@ -103,7 +103,8 @@ Page({
       totalPrice += (item.storePrice * buyCount)
       skuInfoVOs.push({
         skuCount: item.buyCount,
-        skuID: item.skuID
+        skuID: item.skuID,
+        storeStock: item.storeStock
       })
     })
 
@@ -152,7 +153,7 @@ Page({
     // 如果数据是O, 需要弹框提示是否删除
     if (!(data.buyCount - 0)) {
       showModal({
-        content: '商品数据不能为0， 是否要删除此商品？',
+        content: '商品数量不能为0， 是否要删除此商品？',
         showCancel: true,
         cancelText: '否',
         confirmText: '是',
@@ -176,6 +177,12 @@ Page({
     }
   },
 
+  checkStoreStock (skuInfoVOs) {
+    const exceedStock = skuInfoVOs.filter(item => item.skuCount > item.storeStock - 0)
+    console.log(exceedStock, skuInfoVOs)
+    return !exceedStock.length
+  },
+
   // 下单
   submitOrder () {
     if (this.data.loading) return
@@ -191,14 +198,29 @@ Page({
       this.setData({loading: false})
       return
     }
+    console.log('查看商品库存', skuInfoVOs)
+    if (!this.checkStoreStock(skuInfoVOs)) {
+      wx.showToast({
+        title: '库存不足，请修改购买数量',
+        icon: 'none'
+      })
+      this.setData({loading: false})
+      return
+    }
 
     const {provinceName, cityName, countyName, userName, telNumber, detailInfo} = consigneeInfo
+
+    // 过滤skuInfoVOs
+    const skuInfo = skuInfoVOs.map(item => {
+      const {skuCount, skuID} = item
+      return {skuCount, skuID}
+    })
 
     order({
       orderPayType: orderPayType + 1,
       storeId,
       supplier: supplierId,
-      skuInfoVOs,
+      skuInfoVOs: skuInfo,
       buyerName: userName,
       buyerMobile: telNumber,
       areaCode: `${provinceName},${cityName},${countyName}`,

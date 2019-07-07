@@ -16,8 +16,8 @@ Page({
     name: '',
     storeID: '',
     zhuCanCard: '',
-    genderList: ['男', '女', '未知'],
-    genderValue: [1, 2, 3],
+    genderList: ['男', '女'],
+    genderValue: [1, 2],
     loading: false
   },
 
@@ -40,7 +40,7 @@ Page({
   },
 
   onRegister () {
-    const {name, bindPhone, age, gender, loading} = this.data
+    const {name, bindPhone, age, gender, loading, genderValue} = this.data
     if (loading) return
 
     if (!formVerify(name, 'name')) return
@@ -48,9 +48,11 @@ Page({
     if (!formVerify(age, 'age')) return
 
     this.setData({loading: true})
+    console.log({name, bindPhone, age, gender: genderValue[gender]})
 
-    addMember({name, bindPhone, age, gender})
-      .then(res => {
+    addMember({name, bindPhone, age,
+      gender: genderValue[gender]
+    }).then(res => {
         if (res.success) {
           wx.showToast({
             title: '注册成功！'
