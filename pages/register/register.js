@@ -36,7 +36,7 @@ Page({
 
   bindPickerChange(e) {
     const {value} = e.detail
-    this.setData({gender: this.data.genderValue[value - 1]})
+    this.setData({gender: value})
   },
 
   onRegister () {
@@ -48,7 +48,8 @@ Page({
     if (!formVerify(age, 'age')) return
 
     this.setData({loading: true})
-    console.log({name, bindPhone, age, gender: genderValue[gender]})
+    // console.log({name, bindPhone, age, gender: genderValue[gender]})
+    // return
 
     addMember({name, bindPhone, age,
       gender: genderValue[gender]

@@ -26,6 +26,7 @@
 
        </view>
      </view>
+     <image class="bg-logo" src="/images/bg_logo.png"></image>
    </view>
  </block>
 

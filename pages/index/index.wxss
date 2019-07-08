@@ -42,3 +42,12 @@
 .icon-submit{
   width: 38rpx;
 }
+
+.bg-logo{
+  width: 400rpx;
+  height: 156rpx;
+  position: fixed;
+  bottom: 294rpx;
+  left: 50%;
+  margin-left:-200rpx;
+}
